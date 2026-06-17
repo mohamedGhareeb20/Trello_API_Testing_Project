@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Trello API Automation Suite" verbose="1" thread-count="1" parallel="none">
+    <listeners>
+        <listener class-name="com.trello.api.listeners.TestNGListeners"/>
+    </listeners>
+    <test name="Trello Integration Regression Pipeline">
+        <classes>
+            <!-- We will populate these class references as we write the tests -->
+        </classes>
+    </test>
+</suite>

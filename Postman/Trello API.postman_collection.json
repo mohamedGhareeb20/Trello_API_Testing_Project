@@ -1,0 +1,1150 @@
+{
+  "info": {
+    "_postman_id": "710664de-3821-4b6f-9528-c153329169bd",
+    "name": "Trello API",
+    "description": "Collection containing 22 professional test cases targeting Authentication, Boards, Lists, Cards, and Checklists on Trello.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54662202",
+    "_collection_link": "https://go.postman.co/collection/54662202-710664de-3821-4b6f-9528-c153329169bd?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "TC_001 - Auth Success with Valid Key & Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response body contains id and fullName\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData).to.have.property('fullName');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/members/me?key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "members",
+                "me"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_002 - Auth Fail with Valid Key & Invalid Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 401 Unauthorized\", function () {",
+                  "    pm.response.to.have.status(401);",
+                  "});",
+                  "pm.test(\"Body says unauthorized permission requested\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"unauthorized permission requested\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/members/me?key={{valid_key}}&token={{invalid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "members",
+                "me"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{invalid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_003 - Auth Fail with Invalid Key & Valid Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 401 Unauthorized\", function () {",
+                  "    pm.response.to.have.status(401);",
+                  "});",
+                  "pm.test(\"Body says invalid key\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"invalid key\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/members/me?key={{invalid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "members",
+                "me"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "{{invalid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Board",
+      "item": [
+        {
+          "name": "TC_004 - Create Board with Valid Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Board ID is generated\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.environment.set(\"boardId\", jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/boards/?name=Test&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "boards",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Test"
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_005 - Retrieve Board with Valid ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Verify Board Details\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.id).to.eql(pm.environment.get(\"boardId\"));",
+                  "    pm.expect(jsonData.closed).to.eql(false);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/boards/{{boardId}}?key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "boards",
+                "{{boardId}}"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_006 - Update Board Name and Desc",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Verify updated details\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.name).to.eql(\"Updated_Test\");",
+                  "    pm.expect(jsonData.desc).to.eql(\"This board has been updated\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/boards/{{boardId}}?name=Updated_Test&desc=This board has been updated&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "boards",
+                "{{boardId}}"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Updated_Test"
+                },
+                {
+                  "key": "desc",
+                  "value": "This board has been updated"
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_008 - Board Creation Attempt with Empty Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400 Bad Request\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/boards/?name=&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "boards",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": ""
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_009 - Retrieve Board with Invalid ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404 or 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400, 404]);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/boards/invalid_id_value?key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "boards",
+                "invalid_id_value"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_010 - Update Board Exceeding Char Limit",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "var longName = 'a'.repeat(17001);",
+                  "pm.request.body.urlencoded.add({key: 'name', value: longName});"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400 Bad Request\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "",
+                  "description": "Pre-request script sets a long payload for name to avoid huge raw JSON definitions"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/1/boards/{{boardId}}?key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "boards",
+                "{{boardId}}"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "List",
+      "item": [
+        {
+          "name": "TC_011 - Create List",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Verify List Creation & save list ID\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.name).to.eql(\"Test_List\");",
+                  "    pm.expect(jsonData.idBoard).to.eql(pm.environment.get(\"boardId\"));",
+                  "    pm.environment.set(\"listId\", jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/lists?name=Test_List&idBoard={{boardId}}&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "lists"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Test_List"
+                },
+                {
+                  "key": "idBoard",
+                  "value": "{{boardId}}"
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_012 - Archive List",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Closed state should be true\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.closed).to.eql(true);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/lists/{{listId}}/closed?value=true&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "lists",
+                "{{listId}}",
+                "closed"
+              ],
+              "query": [
+                {
+                  "key": "value",
+                  "value": "true"
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_013 - Create List with Invalid Board ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400 or 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400, 404]);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/lists?name=Test_List&idBoard=invalid_board_id&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "lists"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Test_List"
+                },
+                {
+                  "key": "idBoard",
+                  "value": "invalid_board_id"
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_014 - Create List with Empty Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400 Bad Request\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/lists?name=&idBoard={{boardId}}&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "lists"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": ""
+                },
+                {
+                  "key": "idBoard",
+                  "value": "{{boardId}}"
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_015 - Archive List with Invalid Value Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400 Bad Request\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/lists/{{listId}}/closed?value=not_a_boolean&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "lists",
+                "{{listId}}",
+                "closed"
+              ],
+              "query": [
+                {
+                  "key": "value",
+                  "value": "not_a_boolean"
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Card",
+      "item": [
+        {
+          "name": "TC_016 - Create Card",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Verify generated Card ID\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.name).to.eql(\"test\");",
+                  "    pm.environment.set(\"cardId\", jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/cards?name=test&idList={{listId}}&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "cards"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "test"
+                },
+                {
+                  "key": "idList",
+                  "value": "{{listId}}"
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_017 - Update Card Name and Desc",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Verify card values changed\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.name).to.eql(\"Updated Card Name\");",
+                  "    pm.expect(jsonData.desc).to.eql(\"This card was updated via API\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/cards/{{cardId}}?name=Updated Card Name&desc=This card was updated via API&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "cards",
+                "{{cardId}}"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Updated Card Name"
+                },
+                {
+                  "key": "desc",
+                  "value": "This card was updated via API"
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_018 - Create Card with Empty idList",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400 Bad Request\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/cards?name=test&idList=&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "cards"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "test"
+                },
+                {
+                  "key": "idList",
+                  "value": ""
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_019 - Update Card with Invalid Card ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400 or 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400, 404]);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/cards/invalid_card_id?key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "cards",
+                "invalid_card_id"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_020 - Retrieve Card with Invalid Card ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400 or 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400, 404]);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/cards/invalid_card_id?key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "cards",
+                "invalid_card_id"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Checklist",
+      "item": [
+        {
+          "name": "TC_021 - Create Checklist",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Verify Checklist belongs to Card\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.idCard).to.eql(pm.environment.get(\"cardId\"));",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/checklists?name=Test_Checklist&idCard={{cardId}}&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "checklists"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Test_Checklist"
+                },
+                {
+                  "key": "idCard",
+                  "value": "{{cardId}}"
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC_022 - Create Checklist with Invalid Card ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400 or 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400, 404]);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/checklists?name=Test&idCard=invalid_card_id_example&key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "checklists"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Test"
+                },
+                {
+                  "key": "idCard",
+                  "value": "invalid_card_id_example"
+                },
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cleanup",
+      "item": [
+        {
+          "name": "TC_007 - Delete Board",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/1/boards/{{boardId}}?key={{valid_key}}&token={{valid_token}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "1",
+                "boards",
+                "{{boardId}}"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "{{valid_key}}"
+                },
+                {
+                  "key": "token",
+                  "value": "{{valid_token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "const expectedStatus = pm.variables.get(\"expected_status\") || 200;\r",
+          "pm.test(\"Status code is \" + expectedStatus, function () {\r",
+          "    pm.response.to.have.status(expectedStatus);\r",
+          "});"
+        ]
+      }
+    }
+  ]
+}
