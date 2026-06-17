@@ -1,0 +1,32 @@
+[INFO] - [17-06-2026 07:11:09] [main] [com.trello.api.tests.BaseTest] - Suite setup sequence executing. Initializing standard request specifications.
+[INFO] - [17-06-2026 07:11:11] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [17-06-2026 07:11:11] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [17-06-2026 07:11:16] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [17-06-2026 07:16:49] [main] [com.trello.api.tests.BaseTest] - Suite setup sequence executing. Initializing standard request specifications.
+[INFO] - [17-06-2026 07:16:50] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [17-06-2026 07:16:51] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [17-06-2026 07:16:56] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [17-06-2026 07:20:03] [main] [com.trello.api.tests.BaseTest] - Suite setup sequence executing. Initializing standard request specifications.
+[INFO] - [17-06-2026 07:20:04] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [17-06-2026 07:20:05] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [17-06-2026 07:21:28] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [17-06-2026 07:23:46] [main] [com.trello.api.tests.BaseTest] - Suite setup sequence executing. Initializing standard request specifications.
+[INFO] - [17-06-2026 07:23:47] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [17-06-2026 07:23:48] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [17-06-2026 07:23:54] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [17-06-2026 08:16:43] [main] [com.trello.api.tests.BaseTest] - Suite setup sequence executing. Initializing standard request specifications.
+[INFO] - [17-06-2026 08:16:45] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [17-06-2026 08:16:45] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [17-06-2026 08:16:49] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [17-06-2026 08:18:05] [main] [com.trello.api.tests.BaseTest] - Suite setup sequence executing. Initializing standard request specifications.
+[INFO] - [17-06-2026 08:18:06] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [17-06-2026 08:18:06] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [17-06-2026 08:18:11] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [17-06-2026 08:18:30] [main] [com.trello.api.tests.BaseTest] - Suite setup sequence executing. Initializing standard request specifications.
+[INFO] - [17-06-2026 08:18:31] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [17-06-2026 08:18:31] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [17-06-2026 08:18:34] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [17-06-2026 08:21:24] [main] [com.trello.api.tests.BaseTest] - Suite setup sequence executing. Initializing standard request specifications.
+[INFO] - [17-06-2026 08:21:25] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [17-06-2026 08:21:25] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [17-06-2026 08:21:29] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
