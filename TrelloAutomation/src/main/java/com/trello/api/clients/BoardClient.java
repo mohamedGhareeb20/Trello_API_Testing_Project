@@ -1,10 +1,8 @@
 package com.trello.api.clients;
 
 import com.trello.api.models.request.BoardPayload;
-import com.trello.api.specs.TrelloSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import java.util.HashMap;
 import java.util.Map;
 
 public class BoardClient extends RestClient {
@@ -12,10 +10,8 @@ public class BoardClient extends RestClient {
     private static final String BOARD_DETAIL_ENDPOINT = "/1/boards/{id}";
 
     public Response createBoard(BoardPayload payload, RequestSpecification spec) {
-        Map<String, String> queryParams = new HashMap<>();
-        if (payload.getName() != null) queryParams.put("name", payload.getName());
-        if (payload.getDesc() != null) queryParams.put("desc", payload.getDesc());
-        return post(spec, BOARD_ENDPOINT, null, queryParams);
+        // Send payload in the HTTP Body to keep the URL clean
+        return post(spec, BOARD_ENDPOINT, payload, null);
     }
 
     public Response getBoard(String boardId, RequestSpecification spec) {
@@ -25,10 +21,8 @@ public class BoardClient extends RestClient {
 
     public Response updateBoard(String boardId, BoardPayload payload, RequestSpecification spec) {
         Map<String, String> pathParams = Map.of("id", boardId);
-        Map<String, String> queryParams = new HashMap<>();
-        if (payload.getName() != null) queryParams.put("name", payload.getName());
-        if (payload.getDesc() != null) queryParams.put("desc", payload.getDesc());
-        return put(spec, BOARD_DETAIL_ENDPOINT, null, pathParams, queryParams);
+        // Send payload in the HTTP Body to prevent 414 Request-URI Too Large errors
+        return put(spec, BOARD_DETAIL_ENDPOINT, payload, pathParams, null);
     }
 
     public Response deleteBoard(String boardId, RequestSpecification spec) {

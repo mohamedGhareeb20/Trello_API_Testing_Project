@@ -6,7 +6,21 @@
     </listeners>
     <test name="Trello Integration Regression Pipeline">
         <classes>
-            <!-- We will populate these class references as we write the tests -->
+            <!-- Authentication Test Cases-->
+            <class name="com.trello.api.tests.auth.TC_001_AuthSuccessValidCredentials"/>
+            <class name="com.trello.api.tests.auth.TC_002_AuthFailInvalidToken"/>
+            <class name="com.trello.api.tests.auth.TC_003_AuthFailInvalidKey"/>
+            <!-- Board Test Cases-->
+            <class name="com.trello.api.tests.board.TC_004_CreateBoardValidNameTest"/>
+            <class name="com.trello.api.tests.board.TC_005_RetrieveBoardValidIdTest"/>
+            <class name="com.trello.api.tests.board.TC_006_UpdateBoardTest"/>
+            <class name="com.trello.api.tests.board.TC_007_DeleteBoardTest"/>
+            <class name="com.trello.api.tests.board.TC_008_CreateBoardEmptyNameTest"/>
+            <class name="com.trello.api.tests.board.TC_009_RetrieveBoardInvalidIdTest"/>
+            <class name="com.trello.api.tests.board.TC_010_UpdateBoardExceedingCharLimitTest"/>
+
+            <!-- List Test Cases-->
+
         </classes>
     </test>
 </suite>

@@ -8,15 +8,16 @@ import io.restassured.specification.RequestSpecification;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
     protected static final Logger logger = LogManager.getLogger(BaseTest.class);
     protected RequestSpecification validRequestSpec;
 
-    @BeforeSuite
-    public void setUpSuite() {
-        logger.info("Suite setup sequence executing. Initializing standard request specifications.");
+    // Changed from @BeforeSuite to @BeforeClass to guarantee initialization per test class instance
+    @BeforeClass
+    public void setUpClass() {
+        logger.info("Initializing standard request specification for class: {}", this.getClass().getSimpleName());
         validRequestSpec = TrelloSpecBuilder.getValidRequestSpec();
     }
 
@@ -24,7 +25,6 @@ public class BaseTest {
     public void tearDownSuite() {
         logger.info("Suite teardown sequence executing. Writing environment properties to Allure.");
 
-        // Writes target environment metadata dynamically into the allure-results folder
         AllureEnvironmentWriter.allureEnvironmentWriter(
                 ImmutableMap.<String, String>builder()
                         .put("Environment", "Trello Sandbox")
