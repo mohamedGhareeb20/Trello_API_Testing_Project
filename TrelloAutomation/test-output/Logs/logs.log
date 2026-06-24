@@ -298,3 +298,12 @@ java.lang.AssertionError: Board ID not found in TestNG context or System propert
 [INFO] - [24-06-2026 10:28:13] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
 [INFO] - [24-06-2026 10:28:13] [main] [com.trello.api.listeners.TestNGListeners] - Test Suite Execution Sequence Completed: Trello Integration Regression Pipeline
 [INFO] - [24-06-2026 10:28:13] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [24-06-2026 21:17:45] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_011_CreateListTest
+[INFO] - [24-06-2026 21:17:48] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [24-06-2026 21:17:49] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [24-06-2026 21:17:55] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3c1f54341f04bcfc1c2f0f
+[INFO] - [24-06-2026 21:17:55] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [24-06-2026 21:17:56] [main] [com.trello.api.tests.BaseTest] - Successfully created List with ID: 6a3c1f568ec1530db24bf4ec
+[INFO] - [24-06-2026 21:17:56] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3c1f54341f04bcfc1c2f0f
+[INFO] - [24-06-2026 21:17:56] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [24-06-2026 21:17:57] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.

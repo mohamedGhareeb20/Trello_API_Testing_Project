@@ -33,8 +33,6 @@ public class TC_011_CreateListTest extends BaseTest {
     public void setup() {
         listClient = new ListClient();
         boardClient = new BoardClient();
-
-        // 1. PRECONDITION: Create temporary board to hold the list
         BoardPayload payload = BoardPayload.builder()
                 .name("Temp_Board_For_List_Creation")
                 .desc("Temporary board for TC_011 list creation verification")
@@ -50,7 +48,6 @@ public class TC_011_CreateListTest extends BaseTest {
     @Description("Verify create list process when selecting a valid Board ID in the URL path and entering valid credentials.")
     @Severity(SeverityLevel.CRITICAL)
     public void testCreateList(ITestContext context) {
-        // 2. TEST: Build payload and execute POST request to Trello
         ListPayload listPayload = ListPayload.builder()
                 .name("Test_List")
                 .idBoard(tempBoardId)
@@ -70,7 +67,6 @@ public class TC_011_CreateListTest extends BaseTest {
 
     @AfterClass
     public void teardown() {
-        // 3. POST-CONDITION/CLEANUP: Clean up the temporary board from the server
         if (!isBoardDeleted && tempBoardId != null) {
             logger.info("Teardown executing. Cleaning up temporary Board with ID: {}", tempBoardId);
             try {
