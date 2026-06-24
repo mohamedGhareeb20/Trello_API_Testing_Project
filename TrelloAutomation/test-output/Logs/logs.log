@@ -355,3 +355,14 @@ java.lang.AssertionError: Board ID not found in TestNG context or System propert
 [WARN] - [25-06-2026 00:38:50] [main] [com.trello.api.tests.BaseTest] - Safety teardown executing. Cleaning up un-deleted Board with ID: 6a3c4e67f91dd6d8b2228d9b
 [INFO] - [25-06-2026 00:38:50] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
 [INFO] - [25-06-2026 00:38:51] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 01:52:43] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_013_invalidCreateList_Test
+[INFO] - [25-06-2026 01:52:44] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 01:52:44] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 01:57:29] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_013_invalidCreateList_Test
+[INFO] - [25-06-2026 01:57:30] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 01:57:30] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 01:57:33] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 01:58:51] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_013_invalidCreateList_Test
+[INFO] - [25-06-2026 01:58:52] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 01:58:52] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 01:58:55] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.

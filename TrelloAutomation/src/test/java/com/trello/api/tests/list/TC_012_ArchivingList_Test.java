@@ -6,6 +6,9 @@ import com.trello.api.clients.ListClient;
 import com.trello.api.models.request.BoardPayload;
 import com.trello.api.models.request.ListPayload;
 import com.trello.api.tests.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.ITestContext;
@@ -53,7 +56,10 @@ public class TC_012_ArchivingList_Test extends BaseTest {
 
         logger.info("Successfully created List with ID: {}", listId);
     }
-@Test
+
+    @Test(description = "TC_012 - Verify Archive List process")
+    @Description("Verify Archiving  list process when selecting a valid Board ID in the URL path and entering valid credentials.")
+    @Severity(SeverityLevel.CRITICAL)
 public void closeList()
 {
    Response response= listClient.setListClosed(
