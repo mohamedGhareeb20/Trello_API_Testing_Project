@@ -27,8 +27,8 @@ public class TC_008_CreateBoardEmptyNameTest extends BaseTest {
     }
 
     @Test(description = "TC_008 - Verify board creation fails when name is empty")
-    @Description("Verify board creation process when leaving the mandatory 'name' field empty and entering valid credentials.")
-    @Severity(SeverityLevel.CRITICAL)
+    @Description("Verify board creation process when leaving the mandatory 'name' field empty in the parameters and entering valid credentials.")
+    @Severity(SeverityLevel.CRITICAL) // Critical used to match "High" priority within Allure's standard levels
     public void testCreateBoardWithEmptyName() {
         BoardPayload payload = BoardPayload.builder()
                 .name("")

@@ -12,7 +12,7 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.Assert;
-import org.testng.ITestContext;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -22,31 +22,47 @@ import org.testng.annotations.Test;
 public class TC_010_UpdateBoardExceedingCharLimitTest extends BaseTest {
 
     private BoardClient boardClient;
+    private String tempBoardId;
 
     @BeforeClass
     public void setup() {
         boardClient = new BoardClient();
+
+        BoardPayload payload = BoardPayload.builder()
+                .name("Temp_Limit_Board")
+                .desc("Temporary board for TC_010 update boundary verification")
+                .build();
+
+        Response response = boardClient.createBoard(payload, validRequestSpec);
+        ApiAssertions.assertStatusCode(response, 200);
+
+        tempBoardId = response.jsonPath().getString("id");
+        logger.info("PRECONDITION: Created temporary Board with ID: {}", tempBoardId);
     }
 
     @Test(description = "TC_010 - Verify board update fails when name exceeds 17,000 characters")
     @Description("Verify board update process when entering a board name that exceeds the maximum character limit (17,000 characters) and entering valid credentials.")
-    @Severity(SeverityLevel.MINOR)
-    public void testUpdateBoardNameExceedingLimit(ITestContext context) {
-        String boardId = (String) context.getAttribute("boardId");
-        if (boardId == null) {
-            boardId = System.getProperty("boardId");
-        }
-
-        Assert.assertNotNull(boardId, "Board ID not found in TestNG context or System properties. Please run TC_004 first.");
+    @Severity(SeverityLevel.MINOR) // Minor is used to match "Low" priority inside Allure's standard levels
+    public void testUpdateBoardNameExceedingLimit() {
         String excessiveName = "a".repeat(17001);
-        BoardPayload payload = BoardPayload.builder()
+
+        BoardPayload updatePayload = BoardPayload.builder()
                 .name(excessiveName)
                 .desc("Attempting to update board with an excessive name")
                 .build();
 
-        Response response = boardClient.updateBoard(boardId, payload, validRequestSpec);
+        Response response = boardClient.updateBoard(tempBoardId, updatePayload, validRequestSpec);
         ApiAssertions.assertStatusCode(response, 400);
         ApiAssertions.assertBodyContainsText(response, "invalid value for name");
         logger.info("Successfully verified that Trello rejects board updates when the name exceeds the maximum length limit.");
+    }
+
+    @AfterClass
+    public void teardown() {
+        if (tempBoardId != null) {
+            logger.info("Teardown executing. Cleaning up temporary Board with ID: {}", tempBoardId);
+            Response response = boardClient.deleteBoard(tempBoardId, validRequestSpec);
+            ApiAssertions.assertStatusCode(response, 200);
+        }
     }
 }

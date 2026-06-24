@@ -29,7 +29,6 @@ public class TC_009_RetrieveBoardInvalidIdTest extends BaseTest {
     @Description("Verify board retrieval process when entering a non-existent but structurally valid Board ID in the URL path and entering valid credentials.")
     @Severity(SeverityLevel.NORMAL)
     public void testRetrieveBoardWithInvalidId() {
-
         String nonExistentBoardId = "610000000000000000000000";
         Response response = boardClient.getBoard(nonExistentBoardId, validRequestSpec);
         ApiAssertions.assertStatusCode(response, 404);
