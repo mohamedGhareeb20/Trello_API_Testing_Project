@@ -7,8 +7,11 @@ import com.trello.api.models.request.BoardPayload;
 import com.trello.api.models.request.ListPayload;
 import com.trello.api.tests.BaseTest;
 import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.ITestContext;
@@ -16,21 +19,25 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class TC_011_CreateListTest  extends BaseTest {
-
+@Epic("Trello API Test Suite")
+@Feature("List Operations")
+@Story("Create List")
+public class TC_011_CreateListTest extends BaseTest {
 
     private BoardClient boardClient;
     private ListClient listClient;
     private String tempBoardId;
-
+    private boolean isBoardDeleted = false;
 
     @BeforeClass
     public void setup() {
-        listClient=new ListClient();
+        listClient = new ListClient();
         boardClient = new BoardClient();
+
+        // 1. PRECONDITION: Create temporary board to hold the list
         BoardPayload payload = BoardPayload.builder()
-                .name("TC_005_Temp_Board")
-                .desc("Temporary board for TC_005 retrieval verification")
+                .name("Temp_Board_For_List_Creation")
+                .desc("Temporary board for TC_011 list creation verification")
                 .build();
 
         Response response = boardClient.createBoard(payload, validRequestSpec);
@@ -41,37 +48,37 @@ public class TC_011_CreateListTest  extends BaseTest {
 
     @Test(description = "TC_011 - Verify list creation process")
     @Description("Verify create list process when selecting a valid Board ID in the URL path and entering valid credentials.")
-    @Severity(SeverityLevel.CRITICAL) // Critical maps to "High" priority inside Allure's standard levels
-    public void CreateListTC(ITestContext context)
-    {
-        ListPayload listPayload=ListPayload.builder()
+    @Severity(SeverityLevel.CRITICAL)
+    public void testCreateList(ITestContext context) {
+        // 2. TEST: Build payload and execute POST request to Trello
+        ListPayload listPayload = ListPayload.builder()
                 .name("Test_List")
                 .idBoard(tempBoardId)
-                .value("true")
                 .build();
 
         Response response = listClient.createList(listPayload, validRequestSpec);
         ApiAssertions.assertStatusCode(response, 200);
         ApiAssertions.assertFieldEquals(response, "name", "Test_List");
+        ApiAssertions.assertFieldEquals(response, "name", "Test_List"); // Fixed assertion value to match payload
+        ApiAssertions.assertFieldEquals(response, "idBoard", tempBoardId);
         String listId = response.jsonPath().getString("id");
         Assert.assertNotNull(listId, "List ID was not generated in the response!");
         context.setAttribute("listId", listId);
         System.setProperty("listId", listId);
 
         logger.info("Successfully created List with ID: {}", listId);
-
-
-
     }
+
     @AfterClass
     public void teardown() {
-        boolean isDeletedSuccessfully = false;
-        if (!isDeletedSuccessfully && tempBoardId != null) {
-            logger.warn("Safety teardown executing. Cleaning up un-deleted Board with ID: {}", tempBoardId);
+        // 3. POST-CONDITION/CLEANUP: Clean up the temporary board from the server
+        if (!isBoardDeleted && tempBoardId != null) {
+            logger.info("Teardown executing. Cleaning up temporary Board with ID: {}", tempBoardId);
             try {
                 boardClient.deleteBoard(tempBoardId, validRequestSpec);
+                isBoardDeleted = true;
             } catch (Exception e) {
-                logger.error("Failed to execute safety board cleanup for ID: " + tempBoardId, e);
+                logger.error("Failed to execute board cleanup for ID: " + tempBoardId, e);
             }
         }
     }
