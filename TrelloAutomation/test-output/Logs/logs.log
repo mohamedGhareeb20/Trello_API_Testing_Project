@@ -298,3 +298,60 @@ java.lang.AssertionError: Board ID not found in TestNG context or System propert
 [INFO] - [24-06-2026 10:28:13] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
 [INFO] - [24-06-2026 10:28:13] [main] [com.trello.api.listeners.TestNGListeners] - Test Suite Execution Sequence Completed: Trello Integration Regression Pipeline
 [INFO] - [24-06-2026 10:28:13] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 00:19:39] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_011_CreateListTest
+[INFO] - [25-06-2026 00:19:40] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 00:19:40] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 00:19:43] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3c49ed3720950c5a7a7fc5
+[INFO] - [25-06-2026 00:19:43] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[WARN] - [25-06-2026 00:19:44] [main] [com.trello.api.tests.BaseTest] - Safety teardown executing. Cleaning up un-deleted Board with ID: 6a3c49ed3720950c5a7a7fc5
+[INFO] - [25-06-2026 00:19:44] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 00:19:45] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 00:20:54] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_011_CreateListTest
+[INFO] - [25-06-2026 00:20:55] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 00:20:55] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 00:20:58] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3c4a381947aa43a96ad352
+[INFO] - [25-06-2026 00:20:58] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 00:20:59] [main] [com.trello.api.tests.BaseTest] - Successfully created List with ID: 6a3c4a391ee0e2498014a319
+[WARN] - [25-06-2026 00:20:59] [main] [com.trello.api.tests.BaseTest] - Safety teardown executing. Cleaning up un-deleted Board with ID: 6a3c4a381947aa43a96ad352
+[INFO] - [25-06-2026 00:20:59] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 00:21:00] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 00:33:40] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_012_ArchivingList_Test
+[INFO] - [25-06-2026 00:33:41] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 00:33:41] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 00:33:43] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3c4d351796fe84e9046c2b
+[INFO] - [25-06-2026 00:33:43] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 00:33:44] [main] [com.trello.api.tests.BaseTest] - Successfully created List with ID: 6a3c4d36f09ffda068ec6830
+[INFO] - [25-06-2026 00:33:44] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/lists/{id}/closed
+[WARN] - [25-06-2026 00:33:45] [main] [com.trello.api.tests.BaseTest] - Safety teardown executing. Cleaning up un-deleted Board with ID: 6a3c4d351796fe84e9046c2b
+[INFO] - [25-06-2026 00:33:45] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 00:33:46] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 00:36:55] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_012_ArchivingList_Test
+[INFO] - [25-06-2026 00:36:56] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 00:36:56] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 00:36:59] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3c4df8810a43dd94874434
+[INFO] - [25-06-2026 00:36:59] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 00:36:59] [main] [com.trello.api.tests.BaseTest] - Successfully created List with ID: 6a3c4df9ccc3a4fed329fe28
+[INFO] - [25-06-2026 00:36:59] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/lists/{id}/closed
+[WARN] - [25-06-2026 00:37:00] [main] [com.trello.api.tests.BaseTest] - Safety teardown executing. Cleaning up un-deleted Board with ID: 6a3c4df8810a43dd94874434
+[INFO] - [25-06-2026 00:37:00] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 00:37:00] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 00:37:55] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_012_ArchivingList_Test
+[INFO] - [25-06-2026 00:37:56] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 00:37:56] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 00:37:59] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3c4e340c979deca79766b6
+[INFO] - [25-06-2026 00:37:59] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 00:37:59] [main] [com.trello.api.tests.BaseTest] - Successfully created List with ID: 6a3c4e35a392e7db21c8ba29
+[INFO] - [25-06-2026 00:37:59] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/lists/{id}/closed
+[WARN] - [25-06-2026 00:38:00] [main] [com.trello.api.tests.BaseTest] - Safety teardown executing. Cleaning up un-deleted Board with ID: 6a3c4e340c979deca79766b6
+[INFO] - [25-06-2026 00:38:00] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 00:38:00] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 00:38:46] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_012_ArchivingList_Test
+[INFO] - [25-06-2026 00:38:46] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 00:38:46] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 00:38:49] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3c4e67f91dd6d8b2228d9b
+[INFO] - [25-06-2026 00:38:49] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 00:38:50] [main] [com.trello.api.tests.BaseTest] - Successfully created List with ID: 6a3c4e681eeeee3ca84c8f73
+[INFO] - [25-06-2026 00:38:50] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/lists/{id}/closed
+[WARN] - [25-06-2026 00:38:50] [main] [com.trello.api.tests.BaseTest] - Safety teardown executing. Cleaning up un-deleted Board with ID: 6a3c4e67f91dd6d8b2228d9b
+[INFO] - [25-06-2026 00:38:50] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 00:38:51] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
