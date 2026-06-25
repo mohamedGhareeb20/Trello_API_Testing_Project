@@ -12,13 +12,13 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.restassured.response.Response;
+import org.openqa.selenium.devtools.v146.network.model.ResponseReceived;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class TC_017_updateCardNameAndDesc_Test extends BaseTest {
-
+public class TC_020_InvalidGetCard_Test extends BaseTest {
 
     private BoardClient boardClient;
     private ListClient listClient;
@@ -57,7 +57,9 @@ public class TC_017_updateCardNameAndDesc_Test extends BaseTest {
         ApiAssertions.assertStatusCode(response, 200);
         tempListId=response.jsonPath().getString("id");
     }
-    @Test
+
+
+    @Test(dependsOnMethods = "CreateList")
     public void createCard()
     {
         cardClient=new CardClient();
@@ -67,30 +69,24 @@ public class TC_017_updateCardNameAndDesc_Test extends BaseTest {
                 .desc("test card for project")
                 .build();
         Response response=cardClient.createCard(cardPayload,validRequestSpec);
+        cardId=response.jsonPath().getString("id");
         ApiAssertions.assertStatusCode(response, 200);
-        ApiAssertions.assertFieldEquals(response,"name","Test_Card");
-        ApiAssertions.assertFieldEquals(response,"desc","test card for project");
-         cardId = response.jsonPath().getString("id");
-        logger.info("Successfully created Card with ID: {}", cardId);
+
 
     }
-    @Test(description = "TC_017 - Verify Card update process",dependsOnMethods = {"CreateList","createCard"})
-    @Description("Verify update Card process when selecting a card id in the URL path and entering valid credentials.")
+
+    @Test(description = "TC_016 - Verify Card creation process",dependsOnMethods = {"CreateList","createCard"})
+    @Description("Verify create Card process when selecting a valid Board ID  and valid list id in the URL path and entering valid credentials.")
     @Severity(SeverityLevel.CRITICAL)
-    public void updateCardNameAndDesc()
-    {
-    cardClient =new CardClient();
-    CardPayload cardPayload=CardPayload.builder()
-            .name("new name")
-            .desc("new description")
-            .build();
-    Response response=cardClient.updateCard(cardId,cardPayload,validRequestSpec);
-        ApiAssertions.assertStatusCode(response, 200);
-        ApiAssertions.assertFieldEquals(response,"name","new name");
-        ApiAssertions.assertFieldEquals(response,"desc","new description");
-        logger.info("Successfully updated card ");
+    public void  invalidGetCard() {
+        Response response=cardClient.getCard(cardId+"fakeCard",validRequestSpec);
+        ApiAssertions.assertStatusCode(response,400);
+        ApiAssertions.assertBodyContainsText(response,"invalid id");
+
+
 
     }
+
 
     @AfterClass
     public void teardown() {
@@ -106,3 +102,4 @@ public class TC_017_updateCardNameAndDesc_Test extends BaseTest {
         }
     }
 }
+

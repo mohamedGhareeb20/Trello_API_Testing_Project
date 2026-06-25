@@ -521,3 +521,83 @@ java.lang.AssertionError: Board ID not found in TestNG context or System propert
 [INFO] - [25-06-2026 18:28:57] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3d493570d01d03b1873df2
 [INFO] - [25-06-2026 18:28:57] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
 [INFO] - [25-06-2026 18:28:58] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 18:36:34] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_018_invalid_CreateCard_Test
+[INFO] - [25-06-2026 18:36:35] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 18:36:35] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 18:36:39] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3d4b05042ff04feca62613
+[INFO] - [25-06-2026 18:36:40] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 18:36:40] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [25-06-2026 18:36:41] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3d4b05042ff04feca62613
+[INFO] - [25-06-2026 18:36:41] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 18:36:42] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 18:38:02] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_018_invalid_CreateCard_Test
+[INFO] - [25-06-2026 18:38:03] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 18:38:03] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 18:38:08] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3d4b5db6fea16c04358742
+[INFO] - [25-06-2026 18:38:08] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 18:38:09] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [25-06-2026 18:38:09] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3d4b5db6fea16c04358742
+[INFO] - [25-06-2026 18:38:09] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 18:38:10] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 18:41:38] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_019_InvalidUpdateCardNameAndDesc_Test
+[INFO] - [25-06-2026 18:41:39] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 18:41:39] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 18:41:44] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3d4c365594675dc61a95e5
+[INFO] - [25-06-2026 18:41:44] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 18:41:47] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [25-06-2026 18:41:48] [main] [com.trello.api.tests.BaseTest] - Successfully created Card with ID: 6a3d4c3b65623d7b6dd9fcb1
+[INFO] - [25-06-2026 18:41:48] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/cards/{id}
+[INFO] - [25-06-2026 18:41:50] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3d4c365594675dc61a95e5
+[INFO] - [25-06-2026 18:41:50] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 18:41:51] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 18:42:33] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_019_InvalidUpdateCardNameAndDesc_Test
+[INFO] - [25-06-2026 18:42:34] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 18:42:34] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 18:42:39] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3d4c6d8f7767408ddc1de0
+[INFO] - [25-06-2026 18:42:40] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 18:42:40] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [25-06-2026 18:42:41] [main] [com.trello.api.tests.BaseTest] - Successfully created Card with ID: 6a3d4c70981ed8e6d324403a
+[INFO] - [25-06-2026 18:42:41] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/cards/{id}
+[INFO] - [25-06-2026 18:42:41] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3d4c6d8f7767408ddc1de0
+[INFO] - [25-06-2026 18:42:41] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 18:42:42] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 18:53:04] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_020_InvalidGetCard_Test
+[INFO] - [25-06-2026 18:53:04] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 18:53:05] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 18:53:07] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3d4ee2be4fb4be7df94e86
+[INFO] - [25-06-2026 18:53:07] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 18:53:08] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [25-06-2026 18:53:08] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/cards/{id}
+[INFO] - [25-06-2026 18:53:09] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3d4ee2be4fb4be7df94e86
+[INFO] - [25-06-2026 18:53:09] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 18:53:10] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 18:53:47] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_020_InvalidGetCard_Test
+[INFO] - [25-06-2026 18:53:48] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 18:53:48] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 18:53:51] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3d4f0dd5b19c6942a372e5
+[INFO] - [25-06-2026 18:53:51] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 18:53:51] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [25-06-2026 18:53:52] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/cards/{id}
+[INFO] - [25-06-2026 18:53:52] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3d4f0dd5b19c6942a372e5
+[INFO] - [25-06-2026 18:53:52] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 18:53:53] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 18:54:41] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_020_InvalidGetCard_Test
+[INFO] - [25-06-2026 18:54:42] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 18:54:42] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 18:54:45] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3d4f434519574fc0fcacf4
+[INFO] - [25-06-2026 18:54:45] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 18:54:45] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [25-06-2026 18:54:46] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/cards/{id}
+[INFO] - [25-06-2026 18:54:46] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3d4f434519574fc0fcacf4
+[INFO] - [25-06-2026 18:54:46] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 18:54:47] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [25-06-2026 18:55:08] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_020_InvalidGetCard_Test
+[INFO] - [25-06-2026 18:55:09] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [25-06-2026 18:55:09] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [25-06-2026 18:55:12] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3d4f5e8b5cdc91b15cab6c
+[INFO] - [25-06-2026 18:55:12] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [25-06-2026 18:55:12] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [25-06-2026 18:55:13] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/cards/{id}
+[INFO] - [25-06-2026 18:55:13] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3d4f5e8b5cdc91b15cab6c
+[INFO] - [25-06-2026 18:55:13] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [25-06-2026 18:55:14] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.

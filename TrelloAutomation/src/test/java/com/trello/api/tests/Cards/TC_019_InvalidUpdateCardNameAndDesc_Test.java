@@ -17,8 +17,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class TC_017_updateCardNameAndDesc_Test extends BaseTest {
-
+public class TC_019_InvalidUpdateCardNameAndDesc_Test extends BaseTest {
 
     private BoardClient boardClient;
     private ListClient listClient;
@@ -70,25 +69,24 @@ public class TC_017_updateCardNameAndDesc_Test extends BaseTest {
         ApiAssertions.assertStatusCode(response, 200);
         ApiAssertions.assertFieldEquals(response,"name","Test_Card");
         ApiAssertions.assertFieldEquals(response,"desc","test card for project");
-         cardId = response.jsonPath().getString("id");
+        cardId = response.jsonPath().getString("id");
         logger.info("Successfully created Card with ID: {}", cardId);
 
     }
-    @Test(description = "TC_017 - Verify Card update process",dependsOnMethods = {"CreateList","createCard"})
-    @Description("Verify update Card process when selecting a card id in the URL path and entering valid credentials.")
+    @Test(description = "TC_018 - Verify invalid Card update process",dependsOnMethods = {"CreateList","createCard"})
+    @Description("Verify update Card process when selecting a  valid card id in the URL path and entering valid credentials.")
     @Severity(SeverityLevel.CRITICAL)
     public void updateCardNameAndDesc()
     {
-    cardClient =new CardClient();
-    CardPayload cardPayload=CardPayload.builder()
-            .name("new name")
-            .desc("new description")
-            .build();
-    Response response=cardClient.updateCard(cardId,cardPayload,validRequestSpec);
-        ApiAssertions.assertStatusCode(response, 200);
-        ApiAssertions.assertFieldEquals(response,"name","new name");
-        ApiAssertions.assertFieldEquals(response,"desc","new description");
-        logger.info("Successfully updated card ");
+        cardClient =new CardClient();
+        CardPayload cardPayload=CardPayload.builder()
+                .name("new name")
+                .desc("new description")
+                .build();
+        Response response=cardClient.updateCard(cardId+"fakeID",cardPayload,validRequestSpec);
+        ApiAssertions.assertStatusCode(response, 400);
+        ApiAssertions.assertBodyContainsText(response,"invalid id");
+
 
     }
 

@@ -17,7 +17,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class TC_017_updateCardNameAndDesc_Test extends BaseTest {
+public class TC_018_invalid_CreateCard_Test extends BaseTest {
+
 
 
     private BoardClient boardClient;
@@ -25,7 +26,6 @@ public class TC_017_updateCardNameAndDesc_Test extends BaseTest {
     private CardClient cardClient;
     private String tempBoardId;
     private String tempListId;
-    private String cardId;
     private boolean isBoardDeleted = false;
 
     @BeforeClass
@@ -57,38 +57,21 @@ public class TC_017_updateCardNameAndDesc_Test extends BaseTest {
         ApiAssertions.assertStatusCode(response, 200);
         tempListId=response.jsonPath().getString("id");
     }
-    @Test
-    public void createCard()
+    @Test(description = "TC_018 - Verify invalid Card creation process",dependsOnMethods = "CreateList")
+    @Description("Verify create Card process when selecting a invalid list id in the URL path and entering valid credentials.")
+    @Severity(SeverityLevel.CRITICAL)
+    public void invalidCreateCard()
     {
         cardClient=new CardClient();
         CardPayload cardPayload=CardPayload.builder()
                 .name("Test_Card")
-                .idList(tempListId)
+                .idList(tempListId+"fakePoint")
                 .desc("test card for project")
                 .build();
         Response response=cardClient.createCard(cardPayload,validRequestSpec);
-        ApiAssertions.assertStatusCode(response, 200);
-        ApiAssertions.assertFieldEquals(response,"name","Test_Card");
-        ApiAssertions.assertFieldEquals(response,"desc","test card for project");
-         cardId = response.jsonPath().getString("id");
-        logger.info("Successfully created Card with ID: {}", cardId);
+        ApiAssertions.assertStatusCode(response, 400);
+        ApiAssertions.assertBodyContainsText(response,"invalid value for idList");
 
-    }
-    @Test(description = "TC_017 - Verify Card update process",dependsOnMethods = {"CreateList","createCard"})
-    @Description("Verify update Card process when selecting a card id in the URL path and entering valid credentials.")
-    @Severity(SeverityLevel.CRITICAL)
-    public void updateCardNameAndDesc()
-    {
-    cardClient =new CardClient();
-    CardPayload cardPayload=CardPayload.builder()
-            .name("new name")
-            .desc("new description")
-            .build();
-    Response response=cardClient.updateCard(cardId,cardPayload,validRequestSpec);
-        ApiAssertions.assertStatusCode(response, 200);
-        ApiAssertions.assertFieldEquals(response,"name","new name");
-        ApiAssertions.assertFieldEquals(response,"desc","new description");
-        logger.info("Successfully updated card ");
 
     }
 
