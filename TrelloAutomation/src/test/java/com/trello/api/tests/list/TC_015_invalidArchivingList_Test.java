@@ -64,13 +64,11 @@ public class TC_015_invalidArchivingList_Test extends BaseTest {
     {
         Response response= listClient.setListClosed(
                 tempListId,
-                true,
+                ";lksdl;a",
                 validRequestSpec
         );
-        ApiAssertions.assertStatusCode(response, 200);
-        ApiAssertions.assertFieldEquals(response, "name", "Test_List");
-        ApiAssertions.assertFieldEquals(response, "closed", true);
-        ApiAssertions.assertFieldEquals(response, "id", tempListId);
+        ApiAssertions.assertStatusCode(response, 400);
+        ApiAssertions.assertBodyContainsText(response,"invalid value for value");
 
     }
 

@@ -14,6 +14,7 @@ public class CardClient extends RestClient {
         Map<String, String> queryParams = new HashMap<>();
         if (payload.getName() != null) queryParams.put("name", payload.getName());
         if (payload.getIdList() != null) queryParams.put("idList", payload.getIdList());
+        if (payload.getDesc() !=null) queryParams.put("desc",payload.getDesc());
         return post(spec, CARDS_ENDPOINT, null, queryParams);
     }
 
