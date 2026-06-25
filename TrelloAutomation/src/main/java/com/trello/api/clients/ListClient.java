@@ -17,9 +17,9 @@ public class ListClient extends RestClient {
         return post(spec, LISTS_ENDPOINT, null, queryParams);
     }
 
-    public Response setListClosed(String listId, String closedValue, RequestSpecification spec) {
+    public Response setListClosed(String listId, Object closedValue, RequestSpecification spec) {
         Map<String, String> pathParams = Map.of("id", listId);
-        Map<String, String> queryParams = Map.of("value", closedValue);
+        Map<String, Object> queryParams = Map.of("value", closedValue);
         return put(spec, LIST_CLOSED_ENDPOINT, null, pathParams, queryParams);
     }
 }

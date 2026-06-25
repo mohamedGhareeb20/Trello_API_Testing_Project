@@ -35,6 +35,7 @@ public class RestClient {
         return request.put(endpoint);
     }
 
+
     protected Response delete(RequestSpecification spec, String endpoint, Map<String, ?> pathParams) {
         logger.info("Executing DELETE request to: {}", endpoint);
         RequestSpecification request = RestAssured.given().spec(spec);
