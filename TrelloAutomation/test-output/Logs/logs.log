@@ -1,309 +1,337 @@
-[INFO] - [24-06-2026 09:17:57] [main] [com.trello.api.listeners.TestNGListeners] - Initializing Test Suite Execution Sequence: Trello Integration Regression Pipeline
-[INFO] - [24-06-2026 09:17:57] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_001_AuthSuccessValidCredentials
-[INFO] - [24-06-2026 09:17:59] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 09:17:59] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithValidCredentials --------------------
-[INFO] - [24-06-2026 09:17:59] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
-[INFO] - [24-06-2026 09:18:06] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithValidCredentials
-[INFO] - [24-06-2026 09:18:06] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_002_AuthFailInvalidToken
-[INFO] - [24-06-2026 09:18:06] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithInvalidToken --------------------
-[INFO] - [24-06-2026 09:18:06] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
-[INFO] - [24-06-2026 09:18:07] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithInvalidToken
-[INFO] - [24-06-2026 09:18:07] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_003_AuthFailInvalidKey
-[INFO] - [24-06-2026 09:18:07] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithInvalidKey --------------------
-[INFO] - [24-06-2026 09:18:07] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
-[INFO] - [24-06-2026 09:18:08] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithInvalidKey
-[INFO] - [24-06-2026 09:18:08] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_004_CreateBoardValidNameTest
-[INFO] - [24-06-2026 09:18:08] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateBoardWithValidName --------------------
-[INFO] - [24-06-2026 09:18:08] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 09:18:10] [main] [com.trello.api.tests.BaseTest] - Successfully created Board with ID: 6a3b76a367eb9c1791951580
-[INFO] - [24-06-2026 09:18:10] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateBoardWithValidName
-[INFO] - [24-06-2026 09:18:10] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_005_RetrieveBoardValidIdTest
-[INFO] - [24-06-2026 09:18:10] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testRetrieveBoardWithValidId --------------------
-[INFO] - [24-06-2026 09:18:10] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
-[INFO] - [24-06-2026 09:18:11] [main] [com.trello.api.tests.BaseTest] - Successfully retrieved details for Board ID: 6a3b76a367eb9c1791951580 (Name: 'Test')
-[INFO] - [24-06-2026 09:18:11] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testRetrieveBoardWithValidId
-[INFO] - [24-06-2026 09:18:11] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_006_UpdateBoardTest
-[INFO] - [24-06-2026 09:18:11] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateBoardDetails --------------------
-[INFO] - [24-06-2026 09:18:11] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/boards/{id}
-[INFO] - [24-06-2026 09:18:12] [main] [com.trello.api.tests.BaseTest] - Successfully updated details for Board ID: 6a3b76a367eb9c1791951580 (New Name: 'Updated_Test')
-[INFO] - [24-06-2026 09:18:12] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateBoardDetails
-[INFO] - [24-06-2026 09:18:12] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_007_DeleteBoardTest
-[INFO] - [24-06-2026 09:18:12] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testDeleteBoard --------------------
-[INFO] - [24-06-2026 09:18:12] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
-[INFO] - [24-06-2026 09:18:12] [main] [com.trello.api.tests.BaseTest] - Successfully deleted Board with ID: 6a3b76a367eb9c1791951580
-[INFO] - [24-06-2026 09:18:12] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testDeleteBoard
-[INFO] - [24-06-2026 09:18:12] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_008_CreateBoardEmptyNameTest
-[INFO] - [24-06-2026 09:18:12] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateBoardWithEmptyName --------------------
-[INFO] - [24-06-2026 09:18:12] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 09:18:13] [main] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects board creation when name is empty.
-[INFO] - [24-06-2026 09:18:13] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateBoardWithEmptyName
-[INFO] - [24-06-2026 09:18:13] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_009_RetrieveBoardInvalidIdTest
-[INFO] - [24-06-2026 09:18:13] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testRetrieveBoardWithInvalidId --------------------
-[INFO] - [24-06-2026 09:18:13] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
-[INFO] - [24-06-2026 09:18:13] [main] [com.trello.api.tests.BaseTest] - Successfully verified that Trello returns 404 for a non-existent Board ID.
-[INFO] - [24-06-2026 09:18:13] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testRetrieveBoardWithInvalidId
-[INFO] - [24-06-2026 09:18:13] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_010_UpdateBoardExceedingCharLimitTest
-[INFO] - [24-06-2026 09:18:13] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateBoardNameExceedingLimit --------------------
-[ERROR] - [24-06-2026 09:18:13] [main] [com.trello.api.listeners.TestNGListeners] - Result: FAIL - Executed: testUpdateBoardNameExceedingLimit
-[ERROR] - [24-06-2026 09:18:13] [main] [com.trello.api.listeners.TestNGListeners] - Exception message context: 
-java.lang.AssertionError: Board ID not found in TestNG context or System properties. Please run TC_004 first. expected object to not be null
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.assertNotNull(Assert.java:1496)
-	at com.trello.api.tests.board.TC_010_UpdateBoardExceedingCharLimitTest.testUpdateBoardNameExceedingLimit(TC_010_UpdateBoardExceedingCharLimitTest.java:40)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
-[INFO] - [24-06-2026 09:18:14] [main] [com.trello.api.listeners.TestNGListeners] - Test Suite Execution Sequence Completed: Trello Integration Regression Pipeline
-[INFO] - [24-06-2026 09:18:14] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 09:18:44] [main] [com.trello.api.listeners.TestNGListeners] - Initializing Test Suite Execution Sequence: Trello Integration Regression Pipeline
-[INFO] - [24-06-2026 09:18:45] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_001_AuthSuccessValidCredentials
-[INFO] - [24-06-2026 09:18:46] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 09:18:46] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithValidCredentials --------------------
-[INFO] - [24-06-2026 09:18:46] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
-[INFO] - [24-06-2026 09:18:52] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithValidCredentials
-[INFO] - [24-06-2026 09:18:52] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_002_AuthFailInvalidToken
-[INFO] - [24-06-2026 09:18:52] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithInvalidToken --------------------
-[INFO] - [24-06-2026 09:18:52] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
-[INFO] - [24-06-2026 09:18:52] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithInvalidToken
-[INFO] - [24-06-2026 09:18:52] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_003_AuthFailInvalidKey
-[INFO] - [24-06-2026 09:18:52] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithInvalidKey --------------------
-[INFO] - [24-06-2026 09:18:52] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
-[INFO] - [24-06-2026 09:18:52] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithInvalidKey
-[INFO] - [24-06-2026 09:18:52] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_004_CreateBoardValidNameTest
-[INFO] - [24-06-2026 09:18:52] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateBoardWithValidName --------------------
-[INFO] - [24-06-2026 09:18:52] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 09:18:54] [main] [com.trello.api.tests.BaseTest] - Successfully created Board with ID: 6a3b76cfe60cbb397a60f353
-[INFO] - [24-06-2026 09:18:54] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateBoardWithValidName
-[INFO] - [24-06-2026 09:18:54] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_005_RetrieveBoardValidIdTest
-[INFO] - [24-06-2026 09:18:54] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testRetrieveBoardWithValidId --------------------
-[INFO] - [24-06-2026 09:18:54] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
-[INFO] - [24-06-2026 09:18:54] [main] [com.trello.api.tests.BaseTest] - Successfully retrieved details for Board ID: 6a3b76cfe60cbb397a60f353 (Name: 'Test')
-[INFO] - [24-06-2026 09:18:55] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testRetrieveBoardWithValidId
-[INFO] - [24-06-2026 09:18:55] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_006_UpdateBoardTest
-[INFO] - [24-06-2026 09:18:55] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateBoardDetails --------------------
-[INFO] - [24-06-2026 09:18:55] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/boards/{id}
-[INFO] - [24-06-2026 09:18:55] [main] [com.trello.api.tests.BaseTest] - Successfully updated details for Board ID: 6a3b76cfe60cbb397a60f353 (New Name: 'Updated_Test')
-[INFO] - [24-06-2026 09:18:55] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateBoardDetails
-[INFO] - [24-06-2026 09:18:55] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_007_DeleteBoardTest
-[INFO] - [24-06-2026 09:18:55] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testDeleteBoard --------------------
-[INFO] - [24-06-2026 09:18:55] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
-[INFO] - [24-06-2026 09:18:56] [main] [com.trello.api.tests.BaseTest] - Successfully deleted Board with ID: 6a3b76cfe60cbb397a60f353
-[INFO] - [24-06-2026 09:18:56] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testDeleteBoard
-[INFO] - [24-06-2026 09:18:56] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_008_CreateBoardEmptyNameTest
-[INFO] - [24-06-2026 09:18:56] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateBoardWithEmptyName --------------------
-[INFO] - [24-06-2026 09:18:56] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 09:18:56] [main] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects board creation when name is empty.
-[INFO] - [24-06-2026 09:18:56] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateBoardWithEmptyName
-[INFO] - [24-06-2026 09:18:56] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_009_RetrieveBoardInvalidIdTest
-[INFO] - [24-06-2026 09:18:56] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testRetrieveBoardWithInvalidId --------------------
-[INFO] - [24-06-2026 09:18:56] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
-[INFO] - [24-06-2026 09:18:58] [main] [com.trello.api.tests.BaseTest] - Successfully verified that Trello returns 404 for a non-existent Board ID.
-[INFO] - [24-06-2026 09:18:58] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testRetrieveBoardWithInvalidId
-[INFO] - [24-06-2026 09:18:58] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_010_UpdateBoardExceedingCharLimitTest
-[INFO] - [24-06-2026 09:18:58] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateBoardNameExceedingLimit --------------------
-[ERROR] - [24-06-2026 09:18:58] [main] [com.trello.api.listeners.TestNGListeners] - Result: FAIL - Executed: testUpdateBoardNameExceedingLimit
-[ERROR] - [24-06-2026 09:18:58] [main] [com.trello.api.listeners.TestNGListeners] - Exception message context: 
-java.lang.AssertionError: Board ID not found in TestNG context or System properties. Please run TC_004 first. expected object to not be null
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.assertNotNull(Assert.java:1496)
-	at com.trello.api.tests.board.TC_010_UpdateBoardExceedingCharLimitTest.testUpdateBoardNameExceedingLimit(TC_010_UpdateBoardExceedingCharLimitTest.java:40)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
-[INFO] - [24-06-2026 09:18:58] [main] [com.trello.api.listeners.TestNGListeners] - Test Suite Execution Sequence Completed: Trello Integration Regression Pipeline
-[INFO] - [24-06-2026 09:18:58] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 09:19:28] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_010_UpdateBoardExceedingCharLimitTest
-[INFO] - [24-06-2026 09:19:30] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 09:19:30] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 09:20:35] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_010_UpdateBoardExceedingCharLimitTest
-[INFO] - [24-06-2026 09:20:36] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 09:20:37] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 09:20:52] [main] [com.trello.api.listeners.TestNGListeners] - Initializing Test Suite Execution Sequence: Trello Integration Regression Pipeline
-[INFO] - [24-06-2026 09:20:52] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_004_CreateBoardValidNameTest
-[INFO] - [24-06-2026 09:20:53] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 09:20:54] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateBoardWithValidName --------------------
-[INFO] - [24-06-2026 09:20:54] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 09:20:59] [main] [com.trello.api.tests.BaseTest] - Successfully created Board with ID: 6a3b774b2781268b3a334ebf
-[INFO] - [24-06-2026 09:20:59] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateBoardWithValidName
-[INFO] - [24-06-2026 09:20:59] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_010_UpdateBoardExceedingCharLimitTest
-[INFO] - [24-06-2026 09:20:59] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateBoardNameExceedingLimit --------------------
-[INFO] - [24-06-2026 09:20:59] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/boards/{id}
-[INFO] - [24-06-2026 09:21:00] [main] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects board updates when the name exceeds the maximum length limit.
-[INFO] - [24-06-2026 09:21:00] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateBoardNameExceedingLimit
-[INFO] - [24-06-2026 09:21:00] [main] [com.trello.api.listeners.TestNGListeners] - Test Suite Execution Sequence Completed: Trello Integration Regression Pipeline
-[INFO] - [24-06-2026 09:21:00] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 09:57:09] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_005_RetrieveBoardValidIdTest
-[INFO] - [24-06-2026 09:57:11] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 09:57:11] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 09:57:17] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3b7fcdb196e0df0c1fca20
-[INFO] - [24-06-2026 09:57:17] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
-[INFO] - [24-06-2026 09:57:18] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up Board with ID: 6a3b7fcdb196e0df0c1fca20
-[INFO] - [24-06-2026 09:57:18] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
-[INFO] - [24-06-2026 09:57:19] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 10:02:34] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_004_CreateBoardValidNameTest
-[INFO] - [24-06-2026 10:02:36] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 10:02:36] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 10:02:43] [main] [com.trello.api.tests.BaseTest] - Successfully created Board with ID: 6a3b8112cccc0941af4750d5
-[INFO] - [24-06-2026 10:02:43] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 10:05:35] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_005_RetrieveBoardValidIdTest
-[INFO] - [24-06-2026 10:05:36] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 10:05:37] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 10:05:41] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3b81c5f6e49fe547983360
-[INFO] - [24-06-2026 10:05:41] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:05:42] [main] [com.trello.api.tests.BaseTest] - Successfully retrieved details for Board ID: 6a3b81c5f6e49fe547983360 (Name: 'TC_005_Temp_Board')
-[INFO] - [24-06-2026 10:05:42] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3b81c5f6e49fe547983360
-[INFO] - [24-06-2026 10:05:42] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:05:43] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 10:12:20] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_006_UpdateBoardTest
-[INFO] - [24-06-2026 10:12:21] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 10:12:22] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 10:12:27] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3b835b0eb1a6e05e37fab9
-[INFO] - [24-06-2026 10:12:27] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:12:28] [main] [com.trello.api.tests.BaseTest] - Successfully updated details for Board ID: 6a3b835b0eb1a6e05e37fab9 (New Name: 'Updated_Test')
-[INFO] - [24-06-2026 10:12:28] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3b835b0eb1a6e05e37fab9
-[INFO] - [24-06-2026 10:12:28] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:12:29] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 10:16:25] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_007_DeleteBoardTest
-[INFO] - [24-06-2026 10:16:27] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 10:16:27] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 10:16:32] [main] [com.trello.api.tests.BaseTest] - Precondition met: Created temporary Board with ID: 6a3b84506d029eee7c26337f
-[INFO] - [24-06-2026 10:16:32] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:16:32] [main] [com.trello.api.tests.BaseTest] - Successfully deleted Board with ID: 6a3b84506d029eee7c26337f
-[INFO] - [24-06-2026 10:16:33] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 10:18:32] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_008_CreateBoardEmptyNameTest
-[INFO] - [24-06-2026 10:18:34] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 10:18:34] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 10:18:39] [main] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects board creation when name is empty.
-[INFO] - [24-06-2026 10:18:39] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 10:22:02] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_009_RetrieveBoardInvalidIdTest
-[INFO] - [24-06-2026 10:22:03] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 10:22:04] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:22:08] [main] [com.trello.api.tests.BaseTest] - Successfully verified that Trello returns 404 for a non-existent Board ID.
-[INFO] - [24-06-2026 10:22:08] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 10:24:51] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_010_UpdateBoardExceedingCharLimitTest
-[INFO] - [24-06-2026 10:24:52] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 10:24:53] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 10:24:58] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3b864a1ce56efb2e705dcf
-[INFO] - [24-06-2026 10:24:58] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:24:59] [main] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects board updates when the name exceeds the maximum length limit.
-[INFO] - [24-06-2026 10:24:59] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3b864a1ce56efb2e705dcf
-[INFO] - [24-06-2026 10:24:59] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:25:00] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 10:27:54] [main] [com.trello.api.listeners.TestNGListeners] - Initializing Test Suite Execution Sequence: Trello Integration Regression Pipeline
-[INFO] - [24-06-2026 10:27:54] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_001_AuthSuccessValidCredentials
-[INFO] - [24-06-2026 10:27:55] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 10:27:55] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithValidCredentials --------------------
-[INFO] - [24-06-2026 10:27:55] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
-[INFO] - [24-06-2026 10:28:00] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithValidCredentials
-[INFO] - [24-06-2026 10:28:00] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_002_AuthFailInvalidToken
-[INFO] - [24-06-2026 10:28:01] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithInvalidToken --------------------
-[INFO] - [24-06-2026 10:28:01] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
-[INFO] - [24-06-2026 10:28:01] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithInvalidToken
-[INFO] - [24-06-2026 10:28:01] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_003_AuthFailInvalidKey
-[INFO] - [24-06-2026 10:28:01] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithInvalidKey --------------------
-[INFO] - [24-06-2026 10:28:01] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
-[INFO] - [24-06-2026 10:28:01] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithInvalidKey
-[INFO] - [24-06-2026 10:28:01] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_004_CreateBoardValidNameTest
-[INFO] - [24-06-2026 10:28:01] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateBoardWithValidName --------------------
-[INFO] - [24-06-2026 10:28:01] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 10:28:03] [main] [com.trello.api.tests.BaseTest] - Successfully created Board with ID: 6a3b870486ee1d24011db1b4
-[INFO] - [24-06-2026 10:28:03] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateBoardWithValidName
-[INFO] - [24-06-2026 10:28:03] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_005_RetrieveBoardValidIdTest
-[INFO] - [24-06-2026 10:28:03] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 10:28:03] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3b870588724d96dafa3c50
-[INFO] - [24-06-2026 10:28:03] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testRetrieveBoardWithValidId --------------------
-[INFO] - [24-06-2026 10:28:03] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:28:04] [main] [com.trello.api.tests.BaseTest] - Successfully retrieved details for Board ID: 6a3b870588724d96dafa3c50 (Name: 'TC_005_Temp_Board')
-[INFO] - [24-06-2026 10:28:04] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testRetrieveBoardWithValidId
-[INFO] - [24-06-2026 10:28:04] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3b870588724d96dafa3c50
-[INFO] - [24-06-2026 10:28:04] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:28:05] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_006_UpdateBoardTest
-[INFO] - [24-06-2026 10:28:05] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 10:28:05] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3b8707c6adbd1f657df002
-[INFO] - [24-06-2026 10:28:05] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateBoardDetails --------------------
-[INFO] - [24-06-2026 10:28:05] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:28:09] [main] [com.trello.api.tests.BaseTest] - Successfully updated details for Board ID: 6a3b8707c6adbd1f657df002 (New Name: 'Updated_Test')
-[INFO] - [24-06-2026 10:28:09] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateBoardDetails
-[INFO] - [24-06-2026 10:28:09] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3b8707c6adbd1f657df002
-[INFO] - [24-06-2026 10:28:09] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:28:09] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_007_DeleteBoardTest
-[INFO] - [24-06-2026 10:28:09] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testDeleteBoard --------------------
-[INFO] - [24-06-2026 10:28:09] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 10:28:10] [main] [com.trello.api.tests.BaseTest] - Precondition met: Created temporary Board with ID: 6a3b870c67ff717ba2c4bcb0
-[INFO] - [24-06-2026 10:28:10] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.tests.BaseTest] - Successfully deleted Board with ID: 6a3b870c67ff717ba2c4bcb0
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testDeleteBoard
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_008_CreateBoardEmptyNameTest
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateBoardWithEmptyName --------------------
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects board creation when name is empty.
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateBoardWithEmptyName
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_009_RetrieveBoardInvalidIdTest
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testRetrieveBoardWithInvalidId --------------------
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.tests.BaseTest] - Successfully verified that Trello returns 404 for a non-existent Board ID.
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testRetrieveBoardWithInvalidId
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_010_UpdateBoardExceedingCharLimitTest
-[INFO] - [24-06-2026 10:28:11] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 10:28:12] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3b870ed22d6c9716c492f1
-[INFO] - [24-06-2026 10:28:12] [main] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateBoardNameExceedingLimit --------------------
-[INFO] - [24-06-2026 10:28:12] [main] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:28:13] [main] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects board updates when the name exceeds the maximum length limit.
-[INFO] - [24-06-2026 10:28:13] [main] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateBoardNameExceedingLimit
-[INFO] - [24-06-2026 10:28:13] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3b870ed22d6c9716c492f1
-[INFO] - [24-06-2026 10:28:13] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
-[INFO] - [24-06-2026 10:28:13] [main] [com.trello.api.listeners.TestNGListeners] - Test Suite Execution Sequence Completed: Trello Integration Regression Pipeline
-[INFO] - [24-06-2026 10:28:13] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
-[INFO] - [24-06-2026 21:17:45] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_011_CreateListTest
-[INFO] - [24-06-2026 21:17:48] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
-[INFO] - [24-06-2026 21:17:49] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
-[INFO] - [24-06-2026 21:17:55] [main] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3c1f54341f04bcfc1c2f0f
-[INFO] - [24-06-2026 21:17:55] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
-[INFO] - [24-06-2026 21:17:56] [main] [com.trello.api.tests.BaseTest] - Successfully created List with ID: 6a3c1f568ec1530db24bf4ec
-[INFO] - [24-06-2026 21:17:56] [main] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3c1f54341f04bcfc1c2f0f
-[INFO] - [24-06-2026 21:17:56] [main] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
-[INFO] - [24-06-2026 21:17:57] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [26-06-2026 12:58:50] [main] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_022_CreateChecklistInvalidCardIdTest
+[INFO] - [26-06-2026 12:58:53] [main] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [26-06-2026 12:58:53] [main] [com.trello.api.clients.RestClient] - Executing POST request to: /1/checklists
+[INFO] - [26-06-2026 12:59:00] [main] [com.trello.api.tests.BaseTest] - Successfully verified Trello rejects checklist creation on a malformed Card ID with 400.
+[INFO] - [26-06-2026 12:59:01] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [26-06-2026 12:59:32] [main] [com.trello.api.listeners.TestNGListeners] - Initializing Test Suite Execution Sequence: Trello Integration Regression Pipeline
+[INFO] - [26-06-2026 12:59:32] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_003_AuthFailInvalidKey
+[INFO] - [26-06-2026 12:59:32] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_001_AuthSuccessValidCredentials
+[INFO] - [26-06-2026 12:59:32] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_002_AuthFailInvalidToken
+[INFO] - [26-06-2026 12:59:34] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [26-06-2026 12:59:34] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithInvalidKey --------------------
+[INFO] - [26-06-2026 12:59:34] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithValidCredentials --------------------
+[INFO] - [26-06-2026 12:59:34] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithInvalidToken --------------------
+[INFO] - [26-06-2026 12:59:34] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [26-06-2026 12:59:34] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [26-06-2026 12:59:34] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [26-06-2026 12:59:40] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithInvalidKey
+[INFO] - [26-06-2026 12:59:40] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithInvalidToken
+[INFO] - [26-06-2026 12:59:40] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_005_RetrieveBoardValidIdTest
+[INFO] - [26-06-2026 12:59:40] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_004_CreateBoardValidNameTest
+[INFO] - [26-06-2026 12:59:40] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 12:59:40] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateBoardWithValidName --------------------
+[INFO] - [26-06-2026 12:59:40] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 12:59:42] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithValidCredentials
+[INFO] - [26-06-2026 12:59:42] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_006_UpdateBoardTest
+[INFO] - [26-06-2026 12:59:42] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 12:59:43] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4d916b7df90dd4eae4d7
+[INFO] - [26-06-2026 12:59:43] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testRetrieveBoardWithValidId --------------------
+[INFO] - [26-06-2026 12:59:43] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:43] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Successfully created Board with ID: 6a3e4d915a2e3f3a7e4f6b16
+[INFO] - [26-06-2026 12:59:43] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateBoardWithValidName
+[INFO] - [26-06-2026 12:59:43] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_007_DeleteBoardTest
+[INFO] - [26-06-2026 12:59:43] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testDeleteBoard --------------------
+[INFO] - [26-06-2026 12:59:43] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 12:59:44] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4d91c93743930968c1ad
+[INFO] - [26-06-2026 12:59:44] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateBoardDetails --------------------
+[INFO] - [26-06-2026 12:59:44] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:46] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully retrieved details for Board ID: 6a3e4d916b7df90dd4eae4d7 (Name: 'TC_005_Temp_Board')
+[INFO] - [26-06-2026 12:59:46] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testRetrieveBoardWithValidId
+[INFO] - [26-06-2026 12:59:46] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4d916b7df90dd4eae4d7
+[INFO] - [26-06-2026 12:59:46] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:46] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Successfully updated details for Board ID: 6a3e4d91c93743930968c1ad (New Name: 'Updated_Test')
+[INFO] - [26-06-2026 12:59:46] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateBoardDetails
+[INFO] - [26-06-2026 12:59:46] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4d91c93743930968c1ad
+[INFO] - [26-06-2026 12:59:46] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:46] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Precondition met: Created temporary Board with ID: 6a3e4d946d6d5f1eda711ee2
+[INFO] - [26-06-2026 12:59:46] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:47] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_008_CreateBoardEmptyNameTest
+[INFO] - [26-06-2026 12:59:47] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateBoardWithEmptyName --------------------
+[INFO] - [26-06-2026 12:59:47] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 12:59:47] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_009_RetrieveBoardInvalidIdTest
+[INFO] - [26-06-2026 12:59:47] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testRetrieveBoardWithInvalidId --------------------
+[INFO] - [26-06-2026 12:59:47] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:48] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Successfully deleted Board with ID: 6a3e4d946d6d5f1eda711ee2
+[INFO] - [26-06-2026 12:59:48] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testDeleteBoard
+[INFO] - [26-06-2026 12:59:48] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_010_UpdateBoardExceedingCharLimitTest
+[INFO] - [26-06-2026 12:59:48] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 12:59:48] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects board creation when name is empty.
+[INFO] - [26-06-2026 12:59:48] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateBoardWithEmptyName
+[INFO] - [26-06-2026 12:59:48] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_011_CreateListTest
+[INFO] - [26-06-2026 12:59:48] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 12:59:49] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Successfully verified that Trello returns 404 for a non-existent Board ID.
+[INFO] - [26-06-2026 12:59:49] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testRetrieveBoardWithInvalidId
+[INFO] - [26-06-2026 12:59:49] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_012_ArchivingList_Test
+[INFO] - [26-06-2026 12:59:49] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 12:59:50] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4d973853048b2b5da0df
+[INFO] - [26-06-2026 12:59:50] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateBoardNameExceedingLimit --------------------
+[INFO] - [26-06-2026 12:59:50] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:50] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4d988ed31a4bf2a2c0b5
+[INFO] - [26-06-2026 12:59:50] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateList --------------------
+[INFO] - [26-06-2026 12:59:50] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 12:59:50] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4d98aba1eaaec0a15f03
+[INFO] - [26-06-2026 12:59:50] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 12:59:51] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully created List with ID: 6a3e4d9ad7d113efb0af5582
+[INFO] - [26-06-2026 12:59:51] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateList
+[INFO] - [26-06-2026 12:59:51] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4d988ed31a4bf2a2c0b5
+[INFO] - [26-06-2026 12:59:51] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:52] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects board updates when the name exceeds the maximum length limit.
+[INFO] - [26-06-2026 12:59:52] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateBoardNameExceedingLimit
+[INFO] - [26-06-2026 12:59:52] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4d973853048b2b5da0df
+[INFO] - [26-06-2026 12:59:52] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:52] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary List with ID: 6a3e4d9a7bc552c086ad47e6
+[INFO] - [26-06-2026 12:59:52] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: closeList --------------------
+[INFO] - [26-06-2026 12:59:52] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/lists/{id}/closed
+[INFO] - [26-06-2026 12:59:53] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_013_CreateListInvalidBoardIdTest
+[INFO] - [26-06-2026 12:59:53] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateListWithInvalidBoardId --------------------
+[INFO] - [26-06-2026 12:59:53] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 12:59:53] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Successfully archived List with ID: 6a3e4d9a7bc552c086ad47e6
+[INFO] - [26-06-2026 12:59:53] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: closeList
+[INFO] - [26-06-2026 12:59:53] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4d98aba1eaaec0a15f03
+[INFO] - [26-06-2026 12:59:53] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:53] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_014_CreateListEmptyNameTest
+[INFO] - [26-06-2026 12:59:53] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 12:59:54] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects list creation when the board ID is malformed.
+[INFO] - [26-06-2026 12:59:54] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateListWithInvalidBoardId
+[INFO] - [26-06-2026 12:59:54] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_015_ArchiveListInvalidValueTest
+[INFO] - [26-06-2026 12:59:54] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 12:59:54] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_016_CreateCardTest
+[INFO] - [26-06-2026 12:59:54] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 12:59:54] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4d9ce37ec982aa33721a
+[INFO] - [26-06-2026 12:59:54] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateListWithEmptyName --------------------
+[INFO] - [26-06-2026 12:59:54] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 12:59:55] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4d9dc9738a3c3ee9122e
+[INFO] - [26-06-2026 12:59:55] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 12:59:55] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateListWithEmptyName
+[INFO] - [26-06-2026 12:59:55] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4d9ce37ec982aa33721a
+[INFO] - [26-06-2026 12:59:55] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:56] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary List with ID: 6a3e4d9edbe081664b16dd57
+[INFO] - [26-06-2026 12:59:56] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testArchiveListWithInvalidValueType --------------------
+[INFO] - [26-06-2026 12:59:56] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/lists/{id}/closed
+[INFO] - [26-06-2026 12:59:56] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - PRECONDITION A: Created temporary Board with ID: 6a3e4d9e9cf0788628140a56
+[INFO] - [26-06-2026 12:59:56] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 12:59:56] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects archiving when 'value' is not a boolean.
+[INFO] - [26-06-2026 12:59:56] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testArchiveListWithInvalidValueType
+[INFO] - [26-06-2026 12:59:56] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4d9dc9738a3c3ee9122e
+[INFO] - [26-06-2026 12:59:56] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:57] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - PRECONDITION B: Created temporary List with ID: 6a3e4d9f0f4350606e2c40e7
+[INFO] - [26-06-2026 12:59:57] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateCard --------------------
+[INFO] - [26-06-2026 12:59:57] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [26-06-2026 12:59:57] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_017_UpdateCardNameAndDescTest
+[INFO] - [26-06-2026 12:59:57] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 12:59:58] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Successfully created Card with ID: 6a3e4da0e111bb145e7dc889
+[INFO] - [26-06-2026 12:59:58] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateCard
+[INFO] - [26-06-2026 12:59:58] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4d9e9cf0788628140a56
+[INFO] - [26-06-2026 12:59:58] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 12:59:58] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_018_CreateCardEmptyListIdTest
+[INFO] - [26-06-2026 12:59:58] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateCardWithEmptyListId --------------------
+[INFO] - [26-06-2026 12:59:58] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [26-06-2026 12:59:58] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION A: Created temporary Board with ID: 6a3e4da00b9775f373e25149
+[INFO] - [26-06-2026 12:59:58] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 12:59:59] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects card creation when idList is empty.
+[INFO] - [26-06-2026 12:59:59] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateCardWithEmptyListId
+[INFO] - [26-06-2026 12:59:59] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_019_UpdateCardInvalidIdTest
+[INFO] - [26-06-2026 12:59:59] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateCardWithNonExistentId --------------------
+[INFO] - [26-06-2026 12:59:59] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/cards/{id}
+[INFO] - [26-06-2026 12:59:59] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION B: Created temporary List with ID: 6a3e4da1d8c451a6f1be8cd1
+[INFO] - [26-06-2026 12:59:59] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [26-06-2026 12:59:59] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_020_RetrieveCardInvalidIdTest
+[INFO] - [26-06-2026 12:59:59] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testRetrieveCardWithNonExistentId --------------------
+[INFO] - [26-06-2026 12:59:59] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing GET request to: /1/cards/{id}
+[INFO] - [26-06-2026 13:00:00] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully verified that Trello returns 404 when updating a non-existent Card ID.
+[INFO] - [26-06-2026 13:00:00] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateCardWithNonExistentId
+[INFO] - [26-06-2026 13:00:00] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_021_CreateChecklistTest
+[INFO] - [26-06-2026 13:00:00] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:00:00] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION C: Created temporary Card with ID: 6a3e4da211c1a128251cb5bc
+[INFO] - [26-06-2026 13:00:00] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateCardNameAndDesc --------------------
+[INFO] - [26-06-2026 13:00:00] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/cards/{id}
+[INFO] - [26-06-2026 13:00:00] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Successfully verified that Trello returns 404 when retrieving a non-existent Card ID.
+[INFO] - [26-06-2026 13:00:00] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testRetrieveCardWithNonExistentId
+[INFO] - [26-06-2026 13:00:00] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_022_CreateChecklistInvalidCardIdTest
+[INFO] - [26-06-2026 13:00:00] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateChecklistWithMalformedCardId --------------------
+[INFO] - [26-06-2026 13:00:00] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/checklists
+[INFO] - [26-06-2026 13:00:01] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - PRECONDITION A: Created temporary Board with ID: 6a3e4da3db7c7fb9e4355664
+[INFO] - [26-06-2026 13:00:01] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 13:00:01] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Successfully updated Card details for Card ID: 6a3e4da211c1a128251cb5bc
+[INFO] - [26-06-2026 13:00:01] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateCardNameAndDesc
+[INFO] - [26-06-2026 13:00:01] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4da00b9775f373e25149
+[INFO] - [26-06-2026 13:00:01] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:00:02] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Successfully verified Trello rejects checklist creation on a malformed Card ID with 400.
+[INFO] - [26-06-2026 13:00:02] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateChecklistWithMalformedCardId
+[INFO] - [26-06-2026 13:00:02] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - PRECONDITION B: Created temporary List with ID: 6a3e4da4f7f0ec4e7cac69c0
+[INFO] - [26-06-2026 13:00:02] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [26-06-2026 13:00:04] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - PRECONDITION C: Created temporary Card with ID: 6a3e4da6964aa6f9afda061e
+[INFO] - [26-06-2026 13:00:04] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateChecklist --------------------
+[INFO] - [26-06-2026 13:00:04] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/checklists
+[INFO] - [26-06-2026 13:00:05] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully created Checklist with ID: 6a3e4da751157f7eda0dcc21 on Card ID: 6a3e4da6964aa6f9afda061e
+[INFO] - [26-06-2026 13:00:05] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateChecklist
+[INFO] - [26-06-2026 13:00:05] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4da3db7c7fb9e4355664
+[INFO] - [26-06-2026 13:00:05] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:00:07] [main] [com.trello.api.listeners.TestNGListeners] - Test Suite Execution Sequence Completed: Trello Integration Regression Pipeline
+[INFO] - [26-06-2026 13:00:07] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.
+[INFO] - [26-06-2026 13:00:44] [main] [com.trello.api.listeners.TestNGListeners] - Initializing Test Suite Execution Sequence: Trello Integration Regression Pipeline
+[INFO] - [26-06-2026 13:00:44] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_001_AuthSuccessValidCredentials
+[INFO] - [26-06-2026 13:00:44] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_002_AuthFailInvalidToken
+[INFO] - [26-06-2026 13:00:44] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_003_AuthFailInvalidKey
+[INFO] - [26-06-2026 13:00:47] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.utils.ConfigManager] - Successfully loaded environment.properties configuration.
+[INFO] - [26-06-2026 13:00:48] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithInvalidKey --------------------
+[INFO] - [26-06-2026 13:00:48] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithInvalidToken --------------------
+[INFO] - [26-06-2026 13:00:48] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testAuthWithValidCredentials --------------------
+[INFO] - [26-06-2026 13:00:48] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [26-06-2026 13:00:48] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [26-06-2026 13:00:48] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing GET request to: /1/members/me
+[INFO] - [26-06-2026 13:00:56] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithInvalidToken
+[INFO] - [26-06-2026 13:00:56] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithInvalidKey
+[INFO] - [26-06-2026 13:00:57] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_005_RetrieveBoardValidIdTest
+[INFO] - [26-06-2026 13:00:57] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_004_CreateBoardValidNameTest
+[INFO] - [26-06-2026 13:00:57] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:00:57] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateBoardWithValidName --------------------
+[INFO] - [26-06-2026 13:00:57] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:01:01] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4dde9ed8c080248c90a8
+[INFO] - [26-06-2026 13:01:01] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testRetrieveBoardWithValidId --------------------
+[INFO] - [26-06-2026 13:01:01] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:01] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Successfully created Board with ID: 6a3e4ddfa1d5cb1019fc177a
+[INFO] - [26-06-2026 13:01:01] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateBoardWithValidName
+[INFO] - [26-06-2026 13:01:01] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_006_UpdateBoardTest
+[INFO] - [26-06-2026 13:01:01] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:01:01] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testAuthWithValidCredentials
+[INFO] - [26-06-2026 13:01:01] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_007_DeleteBoardTest
+[INFO] - [26-06-2026 13:01:01] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testDeleteBoard --------------------
+[INFO] - [26-06-2026 13:01:01] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:01:03] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Precondition met: Created temporary Board with ID: 6a3e4de1ed4bcff4a59014ad
+[INFO] - [26-06-2026 13:01:03] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:03] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully retrieved details for Board ID: 6a3e4dde9ed8c080248c90a8 (Name: 'TC_005_Temp_Board')
+[INFO] - [26-06-2026 13:01:03] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testRetrieveBoardWithValidId
+[INFO] - [26-06-2026 13:01:03] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4dde9ed8c080248c90a8
+[INFO] - [26-06-2026 13:01:03] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:03] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4de145b7d98e0ead26a3
+[INFO] - [26-06-2026 13:01:03] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateBoardDetails --------------------
+[INFO] - [26-06-2026 13:01:03] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:05] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_008_CreateBoardEmptyNameTest
+[INFO] - [26-06-2026 13:01:05] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateBoardWithEmptyName --------------------
+[INFO] - [26-06-2026 13:01:05] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:01:05] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Successfully updated details for Board ID: 6a3e4de145b7d98e0ead26a3 (New Name: 'Updated_Test')
+[INFO] - [26-06-2026 13:01:05] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateBoardDetails
+[INFO] - [26-06-2026 13:01:05] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4de145b7d98e0ead26a3
+[INFO] - [26-06-2026 13:01:05] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:05] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Successfully deleted Board with ID: 6a3e4de1ed4bcff4a59014ad
+[INFO] - [26-06-2026 13:01:05] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testDeleteBoard
+[INFO] - [26-06-2026 13:01:05] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_009_RetrieveBoardInvalidIdTest
+[INFO] - [26-06-2026 13:01:05] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testRetrieveBoardWithInvalidId --------------------
+[INFO] - [26-06-2026 13:01:05] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing GET request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:06] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects board creation when name is empty.
+[INFO] - [26-06-2026 13:01:06] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateBoardWithEmptyName
+[INFO] - [26-06-2026 13:01:06] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_010_UpdateBoardExceedingCharLimitTest
+[INFO] - [26-06-2026 13:01:06] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:01:06] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Successfully verified that Trello returns 404 for a non-existent Board ID.
+[INFO] - [26-06-2026 13:01:06] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testRetrieveBoardWithInvalidId
+[INFO] - [26-06-2026 13:01:06] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_011_CreateListTest
+[INFO] - [26-06-2026 13:01:06] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:01:07] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_012_ArchivingList_Test
+[INFO] - [26-06-2026 13:01:07] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:01:07] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4de5f07bc5407c5a92e3
+[INFO] - [26-06-2026 13:01:07] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateBoardNameExceedingLimit --------------------
+[INFO] - [26-06-2026 13:01:07] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:07] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4de57d96c0c57f811539
+[INFO] - [26-06-2026 13:01:07] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateList --------------------
+[INFO] - [26-06-2026 13:01:07] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 13:01:08] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4de68b2c9c8d5cf9eddb
+[INFO] - [26-06-2026 13:01:08] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 13:01:09] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects board updates when the name exceeds the maximum length limit.
+[INFO] - [26-06-2026 13:01:09] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateBoardNameExceedingLimit
+[INFO] - [26-06-2026 13:01:09] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4de5f07bc5407c5a92e3
+[INFO] - [26-06-2026 13:01:09] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:09] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Successfully created List with ID: 6a3e4de7eae8e9acd18dce0e
+[INFO] - [26-06-2026 13:01:09] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateList
+[INFO] - [26-06-2026 13:01:09] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4de57d96c0c57f811539
+[INFO] - [26-06-2026 13:01:09] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:09] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary List with ID: 6a3e4de83a2aca9c3bdab982
+[INFO] - [26-06-2026 13:01:09] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: closeList --------------------
+[INFO] - [26-06-2026 13:01:09] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/lists/{id}/closed
+[INFO] - [26-06-2026 13:01:10] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_013_CreateListInvalidBoardIdTest
+[INFO] - [26-06-2026 13:01:10] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateListWithInvalidBoardId --------------------
+[INFO] - [26-06-2026 13:01:10] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 13:01:10] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_014_CreateListEmptyNameTest
+[INFO] - [26-06-2026 13:01:10] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:01:11] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Successfully archived List with ID: 6a3e4de83a2aca9c3bdab982
+[INFO] - [26-06-2026 13:01:11] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: closeList
+[INFO] - [26-06-2026 13:01:11] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4de68b2c9c8d5cf9eddb
+[INFO] - [26-06-2026 13:01:11] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:11] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects list creation when the board ID is malformed.
+[INFO] - [26-06-2026 13:01:11] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateListWithInvalidBoardId
+[INFO] - [26-06-2026 13:01:11] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_015_ArchiveListInvalidValueTest
+[INFO] - [26-06-2026 13:01:11] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:01:12] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4dea83dea1f1931d6c2e
+[INFO] - [26-06-2026 13:01:12] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateListWithEmptyName --------------------
+[INFO] - [26-06-2026 13:01:12] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 13:01:12] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_016_CreateCardTest
+[INFO] - [26-06-2026 13:01:12] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:01:13] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary Board with ID: 6a3e4deb187b8ce58a2da7ed
+[INFO] - [26-06-2026 13:01:13] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 13:01:13] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateListWithEmptyName
+[INFO] - [26-06-2026 13:01:13] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4dea83dea1f1931d6c2e
+[INFO] - [26-06-2026 13:01:13] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:14] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION A: Created temporary Board with ID: 6a3e4dec7c3b57149a2eef2b
+[INFO] - [26-06-2026 13:01:14] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 13:01:14] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - PRECONDITION: Created temporary List with ID: 6a3e4decaab7176479883dd7
+[INFO] - [26-06-2026 13:01:14] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testArchiveListWithInvalidValueType --------------------
+[INFO] - [26-06-2026 13:01:14] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/lists/{id}/closed
+[INFO] - [26-06-2026 13:01:15] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_017_UpdateCardNameAndDescTest
+[INFO] - [26-06-2026 13:01:15] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:01:15] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects archiving when 'value' is not a boolean.
+[INFO] - [26-06-2026 13:01:15] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testArchiveListWithInvalidValueType
+[INFO] - [26-06-2026 13:01:15] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4deb187b8ce58a2da7ed
+[INFO] - [26-06-2026 13:01:15] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:15] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION B: Created temporary List with ID: 6a3e4ded3cfee941759b1f82
+[INFO] - [26-06-2026 13:01:15] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateCard --------------------
+[INFO] - [26-06-2026 13:01:15] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [26-06-2026 13:01:16] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - PRECONDITION A: Created temporary Board with ID: 6a3e4dee4463a6c859504783
+[INFO] - [26-06-2026 13:01:16] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 13:01:16] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Successfully created Card with ID: 6a3e4dee1f562d8673c4e7f5
+[INFO] - [26-06-2026 13:01:16] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateCard
+[INFO] - [26-06-2026 13:01:16] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4dec7c3b57149a2eef2b
+[INFO] - [26-06-2026 13:01:16] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:17] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_018_CreateCardEmptyListIdTest
+[INFO] - [26-06-2026 13:01:17] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateCardWithEmptyListId --------------------
+[INFO] - [26-06-2026 13:01:17] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [26-06-2026 13:01:17] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - PRECONDITION B: Created temporary List with ID: 6a3e4defdaf7bdbf09e4bcf1
+[INFO] - [26-06-2026 13:01:17] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [26-06-2026 13:01:18] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_019_UpdateCardInvalidIdTest
+[INFO] - [26-06-2026 13:01:18] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateCardWithNonExistentId --------------------
+[INFO] - [26-06-2026 13:01:18] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/cards/{id}
+[INFO] - [26-06-2026 13:01:18] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully verified that Trello rejects card creation when idList is empty.
+[INFO] - [26-06-2026 13:01:18] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateCardWithEmptyListId
+[INFO] - [26-06-2026 13:01:18] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_020_RetrieveCardInvalidIdTest
+[INFO] - [26-06-2026 13:01:18] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testRetrieveCardWithNonExistentId --------------------
+[INFO] - [26-06-2026 13:01:18] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing GET request to: /1/cards/{id}
+[INFO] - [26-06-2026 13:01:19] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - PRECONDITION C: Created temporary Card with ID: 6a3e4df134aac0f9ecbe660f
+[INFO] - [26-06-2026 13:01:19] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testUpdateCardNameAndDesc --------------------
+[INFO] - [26-06-2026 13:01:19] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing PUT request to: /1/cards/{id}
+[INFO] - [26-06-2026 13:01:19] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Successfully verified that Trello returns 404 when updating a non-existent Card ID.
+[INFO] - [26-06-2026 13:01:19] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateCardWithNonExistentId
+[INFO] - [26-06-2026 13:01:19] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_021_CreateChecklistTest
+[INFO] - [26-06-2026 13:01:19] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/boards/
+[INFO] - [26-06-2026 13:01:19] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully verified that Trello returns 404 when retrieving a non-existent Card ID.
+[INFO] - [26-06-2026 13:01:19] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testRetrieveCardWithNonExistentId
+[INFO] - [26-06-2026 13:01:19] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Initializing standard request specification for class: TC_022_CreateChecklistInvalidCardIdTest
+[INFO] - [26-06-2026 13:01:19] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateChecklistWithMalformedCardId --------------------
+[INFO] - [26-06-2026 13:01:19] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.clients.RestClient] - Executing POST request to: /1/checklists
+[INFO] - [26-06-2026 13:01:20] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Successfully updated Card details for Card ID: 6a3e4df134aac0f9ecbe660f
+[INFO] - [26-06-2026 13:01:20] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testUpdateCardNameAndDesc
+[INFO] - [26-06-2026 13:01:20] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4dee4463a6c859504783
+[INFO] - [26-06-2026 13:01:20] [TestNG-test-Trello Integration Regression Pipeline-1] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:20] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.tests.BaseTest] - Successfully verified Trello rejects checklist creation on a malformed Card ID with 400.
+[INFO] - [26-06-2026 13:01:20] [TestNG-test-Trello Integration Regression Pipeline-2] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateChecklistWithMalformedCardId
+[INFO] - [26-06-2026 13:01:21] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION A: Created temporary Board with ID: 6a3e4df3af0c57c16d2b490e
+[INFO] - [26-06-2026 13:01:21] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/lists
+[INFO] - [26-06-2026 13:01:22] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION B: Created temporary List with ID: 6a3e4df493909c8e9e7e2284
+[INFO] - [26-06-2026 13:01:22] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/cards
+[INFO] - [26-06-2026 13:01:23] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - PRECONDITION C: Created temporary Card with ID: 6a3e4df5ffb5cc4512320f1a
+[INFO] - [26-06-2026 13:01:23] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - -------------------- Starting Test Execution: testCreateChecklist --------------------
+[INFO] - [26-06-2026 13:01:23] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing POST request to: /1/checklists
+[INFO] - [26-06-2026 13:01:24] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Successfully created Checklist with ID: 6a3e4df692bc0919e396debf on Card ID: 6a3e4df5ffb5cc4512320f1a
+[INFO] - [26-06-2026 13:01:24] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.listeners.TestNGListeners] - Result: PASS - Executed: testCreateChecklist
+[INFO] - [26-06-2026 13:01:24] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.tests.BaseTest] - Teardown executing. Cleaning up temporary Board with ID: 6a3e4df3af0c57c16d2b490e
+[INFO] - [26-06-2026 13:01:24] [TestNG-test-Trello Integration Regression Pipeline-3] [com.trello.api.clients.RestClient] - Executing DELETE request to: /1/boards/{id}
+[INFO] - [26-06-2026 13:01:26] [main] [com.trello.api.listeners.TestNGListeners] - Test Suite Execution Sequence Completed: Trello Integration Regression Pipeline
+[INFO] - [26-06-2026 13:01:26] [main] [com.trello.api.tests.BaseTest] - Suite teardown sequence executing. Writing environment properties to Allure.

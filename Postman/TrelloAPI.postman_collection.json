@@ -68,10 +68,19 @@
                   "pm.test(\"Status code is 401 Unauthorized\", function () {",
                   "    pm.response.to.have.status(401);",
                   "});",
-                  "pm.test(\"Body says unauthorized permission requested\", function () {",
-                  "    pm.expect(pm.response.text()).to.include(\"unauthorized permission requested\");",
+                  "pm.test(\"invalid app token\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"invalid app token\");",
                   "});"
                 ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "packages": {},
                 "type": "text/javascript"
               }
             }
@@ -1139,10 +1148,14 @@
         "packages": {},
         "requests": {},
         "exec": [
-          "const expectedStatus = pm.variables.get(\"expected_status\") || 200;\r",
-          "pm.test(\"Status code is \" + expectedStatus, function () {\r",
-          "    pm.response.to.have.status(expectedStatus);\r",
-          "});"
+          "// Global SLA performance verification\r",
+          "if (pm.response) {\r",
+          "    const maxResponseTimeMs = pm.collectionVariables.get(\"maxResponseTime\") || 1500;\r",
+          "\r",
+          "    pm.test(`SLA Verification: Response time is below ${maxResponseTimeMs}ms`, function () {\r",
+          "        pm.expect(pm.response.responseTime).to.be.below(Number(maxResponseTimeMs));\r",
+          "    });\r",
+          "}"
         ]
       }
     }

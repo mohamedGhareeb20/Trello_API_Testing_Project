@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Trello API Automation Suite" verbose="1" thread-count="1" parallel="none">
+<suite name="Trello API Automation Suite" verbose="1" thread-count="3" parallel="true">
     <listeners>
         <listener class-name="com.trello.api.listeners.TestNGListeners"/>
     </listeners>
@@ -18,8 +18,24 @@
             <class name="com.trello.api.tests.board.TC_008_CreateBoardEmptyNameTest"/>
             <class name="com.trello.api.tests.board.TC_009_RetrieveBoardInvalidIdTest"/>
             <class name="com.trello.api.tests.board.TC_010_UpdateBoardExceedingCharLimitTest"/>
-
             <!-- List Test Cases-->
+            <class name="com.trello.api.tests.list.TC_011_CreateListTest"/>
+            <class name="com.trello.api.tests.list.TC_012_ArchivingList_Test"/>
+            <class name="com.trello.api.tests.list.TC_013_CreateListInvalidBoardIdTest"/>
+            <class name="com.trello.api.tests.list.TC_014_CreateListEmptyNameTest"/>
+            <class name="com.trello.api.tests.list.TC_015_ArchiveListInvalidValueTest"/>
+            <!-- Card Test Cases-->
+            <class name="com.trello.api.tests.card.TC_016_CreateCardTest"/>
+            <class name="com.trello.api.tests.card.TC_017_UpdateCardNameAndDescTest"/>
+            <class name="com.trello.api.tests.card.TC_018_CreateCardEmptyListIdTest"/>
+            <class name="com.trello.api.tests.card.TC_019_UpdateCardInvalidIdTest"/>
+            <class name="com.trello.api.tests.card.TC_020_RetrieveCardInvalidIdTest"/>
+            <!-- Checklist Test Cases-->
+            <class name="com.trello.api.tests.checklist.TC_021_CreateChecklistTest"/>
+            <class name="com.trello.api.tests.checklist.TC_022_CreateChecklistInvalidCardIdTest"/>
+
+
+
 
         </classes>
     </test>
