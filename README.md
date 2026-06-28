@@ -195,8 +195,8 @@ All test documentation is located in the `Documentation/` folder, including:
 - Test Cases
 - Test Execution Shedule
 - Test Execution
-- Defect Reports 
-- Test Completion Reprt
+- Defect Report
+- Test Completion Report
 
 ---
 
