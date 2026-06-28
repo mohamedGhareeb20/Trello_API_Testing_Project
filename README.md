@@ -1,6 +1,6 @@
-# 🧪 Trello API Testing Project
+# 🧪 Trello REST API Automation Framework
 
-A comprehensive API testing suite for the **Trello REST API**, combining **manual testing with Postman**, **automated test execution via Newman**, and **Java-based test automation using RestAssured**. The project covers end-to-end scenarios including boards, lists, and cards management.
+A comprehensive, production-grade test validation suite for the **Trello REST API**, combining **headless exploratory testing via Newman CLI** and an isolated, self-cleaning **Java-based Test Automation Framework (TAF)** built on REST Assured and TestNG [1, 2].
 
 ---
 
@@ -14,23 +14,21 @@ A comprehensive API testing suite for the **Trello REST API**, combining **manua
   - [Trello API Credentials](#trello-api-credentials)
 - [Running the Tests](#-running-the-tests)
   - [Postman / Newman (Manual & CLI)](#postman--newman-manual--cli)
-  - [Java Automation (RestAssured)](#java-automation-restassured)
+  - [Java Automation (REST Assured)](#java-automation-restassured)
 - [Test Coverage](#-test-coverage)
-- [Reports](#-reports)
-- [Documentation](#-documentation)
+- [Defect Tracking](#-defect-tracking)
+- [Reports & Observability](#-reports--observability)
 
 ---
 
 ## 📌 Project Overview
 
-This project tests the **Trello REST API** (`https://api.trello.com/1/`) and validates core functionality including:
+This project implements a dual-track strategy to validate Trello's core REST endpoints, focusing on test case isolation, contract verification, and performance SLAs [1, 2]:
 
-- Creating, updating, and deleting **Boards**
-- Managing **Lists** within boards
-- CRUD operations on **Cards**
-- End-to-end (E2E) workflow scenarios
-- Automated CLI execution via **Newman** with HTML report generation
-- CI-ready structure for integration with **Jenkins** or GitHub Actions
+*   **Manual & Headless CLI Phase**: Request building in Postman and command-line execution using Newman CLI.
+*   **Automated Phase**: Modular, parallel-ready Java test classes using REST Assured and TestNG [1].
+*   **Design Paradigm**: Employs the **API Object Model (AOM)** to decouple low-level HTTP network calls from test scripts [1].
+*   **Data Lifecycle**: Leverages self-cleaning lifecycles where each test class programmatically creates its own preconditions in `@BeforeClass` and purges them in `@AfterClass` to prevent sandbox data pollution [2].
 
 ---
 
@@ -38,41 +36,54 @@ This project tests the **Trello REST API** (`https://api.trello.com/1/`) and val
 
 | Tool / Technology | Purpose |
 |---|---|
-| **Java** | Primary automation language |
-| **RestAssured** | API test automation framework |
-| **TestNG / JUnit** | Test runner |
-| **Maven** | Build & dependency management |
-| **Postman** | Manual API testing & collection creation |
-| **Newman** | CLI runner for Postman collections |
-| **Newman HTML Extra** | HTML test report generation |
-| **Jenkins** *(optional)* | CI/CD pipeline integration |
+| **Java 21 (LTS)** | Primary programming language |
+| **REST Assured (6.0.0)** | HTTP client execution, JSON assertions, and contract validations |
+| **TestNG (7.12.0)** | Test runner, lifecycle configuration hooks, and suite execution |
+| **Maven** | Build, compiler target, and dependency management |
+| **Lombok & Jackson** | POJO payload serialization (Builders) and response deserialization |
+| **Allure (2.27.0 / 2.29.1)** | Interactive, graphical HTML reporting and HTTP transaction logging |
+| **Log4j2 (2.26.0)** | Structural console and file execution logging |
+| **Postman & Newman** | Manual verification and command-line collection execution |
 
 ---
 
 ## 📁 Project Structure
 
-```
-Trello_API_Testing_Project/
-│
-├── TrelloAutomation/          # Java + RestAssured automation project
-│   ├── src/
-│   │   └── test/
-│   │       └── java/          # Test classes
-│   └── pom.xml                # Maven configuration
-│
-├── Postman/                   # Postman collection & environment files
-│   ├── Trello_Collection.json
-│   └── Trello_Environment.json
-│
-├── Documentation/             # Test plan, test cases, and project docs
-│
-├── newman                     # Newman HTML report output
-│
-└── README.md
-```
+This outline represents the actual compiled layout of the repository (excluding target build folders) [1]:
 
+```text
+Trello_API_Testing_Project
+├───Documentation/
+│       Manual Testing Artifacts.xlsx     # Test Plan, Test Cases, Defect Report
+│
+├───Postman/
+│       TrelloAPI.postman_collection.json # 22 Manual collection test cases
+│       Trello-API-Sandbox.postman_environment.json # Sandbox environment configurations
+│
+└───TrelloAutomation/                     # Java REST Assured Framework
+    │   pom.xml                           # Maven dependencies & compile targets
+    │   testng.xml                        # TestNG suite runner XML
+    │
+    └───src/
+        ├───main/
+        │   ├───java/com/trello/api/
+        │   │   ├───assertions/           # ApiAssertions (status codes, JSON paths)
+        │   │   ├───clients/              # RestClient & specific clients (Board, List, Card)
+        │   │   ├───listeners/            # TestNGListeners (Allure error captures)
+        │   │   ├───models/               # Payloads (request) & Responses (POJOs)
+        │   │   ├───specs/                # TrelloSpecBuilder & Global Response Time SLA Filters
+        │   │   └───utils/                # ConfigManager, JsonReader, SchemaValidator
+        │   │
+        │   └───resources/
+        │       │   environment.properties# Active API Base URL, Key, and Token
+        │       │   log4j2.properties     # Logging formats and logfile targets
+        │       └───schemas/              # JSON Schema contract validation files
+        │
+        └───test/
+            └───java/com/trello/api/tests/# 17 Isolated Automated Test Classes
+            
+```
 ---
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -122,7 +133,6 @@ newman run Postman/Trello_Collection.json \
   -r htmlextra \
   --reporter-htmlextra-export newman/report.html
 ```
-
 ---
 
 ### Java Automation (RestAssured)
@@ -156,7 +166,7 @@ mvn test
 | **Boards** | Create, Get, Update, Delete |
 | **Lists** | Create, Get, Update, Archive |
 | **Cards** | Create, Get, Update, Move, Delete |
-| **E2E Scenarios** | Full board-to-card workflow |
+| **Checklists** | Create, Get, Update, Delete |
 
 ---
 
@@ -181,9 +191,12 @@ Open it in any browser to view detailed results including:
 
 All test documentation is located in the `Documentation/` folder, including:
 
-- Test Plan
+- Test Plan & Analysis
 - Test Cases
-- Bug Reports *(if applicable)*
+- Test Execution Shedule
+- Test Execution
+- Defect Reports 
+- Test Completion Reprt
 
 ---
 
