@@ -1,6 +1,6 @@
 # 🧪 Trello REST API Automation Framework
 
-A comprehensive, production-grade test validation suite for the **Trello REST API**, combining **headless exploratory testing via Newman CLI** and an isolated, self-cleaning **Java-based Test Automation Framework (TAF)** built on REST Assured and TestNG [1, 2].
+A comprehensive, production-grade test validation suite for the **Trello REST API**, combining **headless exploratory testing via Newman CLI** and an isolated, self-cleaning **Java-based Test Automation Framework (TAF)** built on REST Assured and TestNG.
 
 ---
 
@@ -23,12 +23,12 @@ A comprehensive, production-grade test validation suite for the **Trello REST AP
 
 ## 📌 Project Overview
 
-This project implements a dual-track strategy to validate Trello's core REST endpoints, focusing on test case isolation, contract verification, and performance SLAs [1, 2]:
+This project implements a dual-track strategy to validate Trello's core REST endpoints, focusing on test case isolation, contract verification, and performance SLAs:
 
 *   **Manual & Headless CLI Phase**: Request building in Postman and command-line execution using Newman CLI.
-*   **Automated Phase**: Modular, parallel-ready Java test classes using REST Assured and TestNG [1].
-*   **Design Paradigm**: Employs the **API Object Model (AOM)** to decouple low-level HTTP network calls from test scripts [1].
-*   **Data Lifecycle**: Leverages self-cleaning lifecycles where each test class programmatically creates its own preconditions in `@BeforeClass` and purges them in `@AfterClass` to prevent sandbox data pollution [2].
+*   **Automated Phase**: Modular, parallel-ready Java test classes using REST Assured and TestNG.
+*   **Design Paradigm**: Employs the **API Object Model (AOM)** to decouple low-level HTTP network calls from test scripts.
+*   **Data Lifecycle**: Leverages self-cleaning lifecycles where each test class programmatically creates its own preconditions in `@BeforeClass` and purges them in `@AfterClass` to prevent sandbox data pollution.
 
 ---
 
@@ -49,7 +49,7 @@ This project implements a dual-track strategy to validate Trello's core REST end
 
 ## 📁 Project Structure
 
-This outline represents the actual compiled layout of the repository (excluding target build folders) [1]:
+This outline represents the actual compiled layout of the repository (excluding target build folders):
 
 ```text
 Trello_API_Testing_Project
@@ -195,8 +195,8 @@ All test documentation is located in the `Documentation/` folder, including:
 - Test Cases
 - Test Execution Shedule
 - Test Execution
-- Defect Report
-- Test Completion Report
+- Defect Reports 
+- Test Completion Reprt
 
 ---
 
